@@ -30,7 +30,7 @@ Project maintainers have the right and responsibility to remove, edit, or reject
 
 ## ✏️ Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the **mscsquared labs** team responsible for Code of Conduct enforcement at **<conduct@mscsquaredlabs.com>** (replace with your actual contact address). All complaints will be reviewed and investigated, and will result in a response deemed necessary and appropriate to the circumstances.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by contacting the **mscsquared labs team** responsible for Code of Conduct enforcement at **conduct@mscsquaredlabs.com** (replace with your actual contact address). All complaints will be reviewed and investigated, and will result in a response deemed necessary and appropriate to the circumstances.
 
 The project team is obligated to maintain confidentiality with regard to the reporter of an incident. Further details of specific enforcement policies may be posted separately.
 

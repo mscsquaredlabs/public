@@ -1,0 +1,291 @@
+/*
+ * FolderPathModal.css
+ * Modern modal styling for folder path input
+ */
+
+/* ===== MODAL OVERLAY ===== */
+.folder-path-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease;
+  backdrop-filter: blur(4px);
+}
+
+.dark-mode.folder-path-modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== MODAL ===== */
+.folder-path-modal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease;
+  border: 1px solid #e5e7eb;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-mode .folder-path-modal {
+  background: #1f2937;
+  border-color: #4b5563;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MODAL HEADER ===== */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  transition: border-color 0.3s ease;
+}
+
+.dark-mode .modal-header {
+  border-bottom-color: #4b5563;
+}
+
+.modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .modal-title {
+  color: #f9fafb;
+}
+
+.modal-close-button {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  padding: 0;
+  line-height: 1;
+}
+
+.modal-close-button:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.dark-mode .modal-close-button {
+  color: #9ca3af;
+}
+
+.dark-mode .modal-close-button:hover {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+/* ===== MODAL FORM ===== */
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.modal-content {
+  padding: 24px;
+  flex: 1;
+}
+
+.modal-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .modal-label {
+  color: #d1d5db;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: white;
+  color: #1f2937;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.modal-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.modal-input::placeholder {
+  color: #9ca3af;
+}
+
+.dark-mode .modal-input {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.dark-mode .modal-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.dark-mode .modal-input::placeholder {
+  color: #6b7280;
+}
+
+.modal-hint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #f9fafb;
+  border-radius: 6px;
+  border-left: 3px solid #6366f1;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark-mode .modal-hint {
+  background-color: #374151;
+  border-left-color: #818cf8;
+}
+
+.hint-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.hint-text {
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+.dark-mode .hint-text {
+  color: #9ca3af;
+}
+
+/* ===== MODAL FOOTER ===== */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  border-top: 1px solid #e5e7eb;
+  transition: border-color 0.3s ease;
+}
+
+.dark-mode .modal-footer {
+  border-top-color: #4b5563;
+}
+
+.modal-button {
+  padding: 10px 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  font-family: inherit;
+}
+
+.modal-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.modal-button.secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.modal-button.secondary:hover:not(:disabled) {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}
+
+.dark-mode .modal-button.secondary {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+.dark-mode .modal-button.secondary:hover:not(:disabled) {
+  background-color: #4b5563;
+  color: #f9fafb;
+}
+
+.modal-button.primary {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.modal-button.primary:hover:not(:disabled) {
+  background-color: #4338ca;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode .modal-button.primary {
+  background-color: #6366f1;
+}
+
+.dark-mode .modal-button.primary:hover:not(:disabled) {
+  background-color: #4f46e5;
+}
+
+
+

@@ -1,0 +1,190 @@
+/*
+ * ConfirmationModal.css
+ * Styles for the custom confirmation modal
+ * Consistent with the UI design
+ */
+
+.confirmation-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease;
+  backdrop-filter: blur(2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.confirmation-modal-content {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 0;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dark-mode .confirmation-modal-content {
+  background-color: #1f2937;
+  color: #f9fafb;
+}
+
+.confirmation-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dark-mode .confirmation-modal-header {
+  border-bottom-color: #4b5563;
+}
+
+.confirmation-modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1f2937;
+}
+
+.dark-mode .confirmation-modal-title {
+  color: #f9fafb;
+}
+
+.confirmation-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.confirmation-modal-close:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.dark-mode .confirmation-modal-close {
+  color: #9ca3af;
+}
+
+.dark-mode .confirmation-modal-close:hover {
+  background-color: #374151;
+  color: #f9fafb;
+}
+
+.confirmation-modal-body {
+  padding: 24px;
+}
+
+.confirmation-modal-message {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.dark-mode .confirmation-modal-message {
+  color: #d1d5db;
+}
+
+.confirmation-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.dark-mode .confirmation-modal-actions {
+  border-top-color: #4b5563;
+  background-color: #111827;
+}
+
+.confirmation-modal-actions .secondary-button,
+.confirmation-modal-actions .action-button {
+  min-width: 100px;
+}
+
+/* Modern style support */
+.modern-style .confirmation-modal-content {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.25);
+}
+
+.dark-mode .modern-style .confirmation-modal-content {
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.98) 0%, rgba(46, 82, 152, 0.95) 100%);
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 8px 32px rgba(126, 34, 206, 0.3);
+}
+
+.modern-style .confirmation-modal-header {
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.dark-mode .modern-style .confirmation-modal-header {
+  background: linear-gradient(90deg, rgba(126, 34, 206, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+  border-bottom-color: rgba(168, 85, 247, 0.4);
+}
+
+.modern-style .confirmation-modal-title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark-mode .modern-style .confirmation-modal-title {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modern-style .confirmation-modal-actions {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.3) 100%);
+}
+
+.dark-mode .modern-style .confirmation-modal-actions {
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.5) 0%, rgba(46, 82, 152, 0.3) 100%);
+}
+
+

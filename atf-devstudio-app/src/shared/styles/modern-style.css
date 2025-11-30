@@ -1,0 +1,442 @@
+/*
+ * modern-style.css
+ * Shared modern vibrant styling for components with Simple-Modern toggle
+ * Based on the CheatSheet component's modern design
+ */
+
+/* ===== ANIMATIONS ===== */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes starPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+@keyframes tabGlow {
+  0%, 100% { box-shadow: 0 -4px 16px rgba(102, 126, 234, 0.3), 0 4px 8px rgba(102, 126, 234, 0.2); }
+  50% { box-shadow: 0 -4px 20px rgba(102, 126, 234, 0.5), 0 4px 12px rgba(118, 75, 162, 0.3); }
+}
+
+@keyframes tabGlowDark {
+  0%, 100% { box-shadow: 0 -4px 16px rgba(126, 34, 206, 0.4), 0 4px 8px rgba(168, 85, 247, 0.3); }
+  50% { box-shadow: 0 -4px 20px rgba(126, 34, 206, 0.6), 0 4px 12px rgba(168, 85, 247, 0.4); }
+}
+
+/* ===== MODERN STYLE - MAIN CONTENT AREA ===== */
+.modern-style .tool-wrapper,
+.modern-style .validator-area,
+.modern-style .parser-area,
+.modern-style .encoder-decoder-area,
+.modern-style .analyzer-area,
+.modern-style .inspector-area,
+.modern-style .tester-area,
+.modern-style .client-area,
+.modern-style .fiddle-area,
+.modern-style .formatter-area,
+.modern-style .visualizer-area,
+.modern-style .deploy-app-area,
+.modern-style .cron-expression-tool-area,
+.modern-style .markdown-previewer-area,
+.modern-style .code-diff-checker-area,
+.modern-style .bcrypts-area {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3), 0 4px 16px rgba(118, 75, 162, 0.2);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.modern-style .tool-wrapper::before,
+.modern-style .validator-area::before,
+.modern-style .parser-area::before,
+.modern-style .encoder-decoder-area::before,
+.modern-style .analyzer-area::before,
+.modern-style .inspector-area::before,
+.modern-style .tester-area::before,
+.modern-style .client-area::before,
+.modern-style .fiddle-area::before,
+.modern-style .formatter-area::before,
+.modern-style .visualizer-area::before,
+.modern-style .deploy-app-area::before,
+.modern-style .cron-expression-tool-area::before,
+.modern-style .markdown-previewer-area::before,
+.modern-style .code-diff-checker-area::before,
+.modern-style .bcrypts-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.dark-mode .modern-style .tool-wrapper,
+.dark-mode .modern-style .validator-area,
+.dark-mode .modern-style .parser-area,
+.dark-mode .modern-style .encoder-decoder-area,
+.dark-mode .modern-style .analyzer-area,
+.dark-mode .modern-style .inspector-area,
+.dark-mode .modern-style .tester-area,
+.dark-mode .modern-style .client-area,
+.dark-mode .modern-style .fiddle-area,
+.dark-mode .modern-style .formatter-area,
+.dark-mode .modern-style .visualizer-area,
+.dark-mode .modern-style .deploy-app-area,
+.dark-mode .modern-style .cron-expression-tool-area,
+.dark-mode .modern-style .markdown-previewer-area,
+.dark-mode .modern-style .code-diff-checker-area,
+.dark-mode .modern-style .bcrypts-area {
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 25%, #7e22ce 50%, #a855f7 75%, #3b82f6 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  box-shadow: 0 8px 32px rgba(30, 60, 114, 0.4), 0 4px 16px rgba(126, 34, 206, 0.3);
+}
+
+/* ===== MODERN STYLE - ACTION BUTTONS ===== */
+.modern-style .action-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+}
+
+.modern-style .action-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.dark-mode .modern-style .action-button {
+  background: linear-gradient(135deg, #7e22ce 0%, #a855f7 100%);
+  box-shadow: 0 4px 12px rgba(126, 34, 206, 0.4);
+}
+
+.dark-mode .modern-style .action-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+  box-shadow: 0 6px 16px rgba(126, 34, 206, 0.5);
+}
+
+.modern-style .secondary-button {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  color: #667eea;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.modern-style .secondary-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.dark-mode .modern-style .secondary-button {
+  background: linear-gradient(135deg, rgba(126, 34, 206, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+  border-color: rgba(168, 85, 247, 0.4);
+  color: #a855f7;
+}
+
+.dark-mode .modern-style .secondary-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, rgba(126, 34, 206, 0.3) 0%, rgba(168, 85, 247, 0.3) 100%);
+  box-shadow: 0 4px 12px rgba(126, 34, 206, 0.4);
+}
+
+/* ===== MODERN STYLE - TABS ===== */
+.modern-style .validator-tab,
+.modern-style .parser-tab,
+.modern-style .base64-tab,
+.modern-style .analyzer-tab,
+.modern-style .inspector-tab,
+.modern-style .tester-tab,
+.modern-style .client-tab,
+.modern-style .fiddle-tab,
+.modern-style .formatter-tab,
+.modern-style .visualizer-tab,
+.modern-style .deployer-tab,
+.modern-style .cron-tab,
+.modern-style .markdown-tab,
+.modern-style .diff-tab,
+.modern-style .bcrypt-tab {
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-style .validator-tab.active,
+.modern-style .parser-tab.active,
+.modern-style .base64-tab.active,
+.modern-style .analyzer-tab.active,
+.modern-style .inspector-tab.active,
+.modern-style .tester-tab.active,
+.modern-style .client-tab.active,
+.modern-style .fiddle-tab.active,
+.modern-style .formatter-tab.active,
+.modern-style .visualizer-tab.active,
+.modern-style .deployer-tab.active,
+.modern-style .cron-tab.active,
+.modern-style .markdown-tab.active,
+.modern-style .diff-tab.active,
+.modern-style .bcrypt-tab.active {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 -4px 16px rgba(102, 126, 234, 0.3), 0 4px 8px rgba(102, 126, 234, 0.2);
+  animation: tabGlow 2s ease infinite;
+}
+
+.dark-mode .modern-style .validator-tab.active,
+.dark-mode .modern-style .parser-tab.active,
+.dark-mode .modern-style .base64-tab.active,
+.dark-mode .modern-style .analyzer-tab.active,
+.dark-mode .modern-style .inspector-tab.active,
+.dark-mode .modern-style .tester-tab.active,
+.dark-mode .modern-style .client-tab.active,
+.dark-mode .modern-style .fiddle-tab.active,
+.dark-mode .modern-style .formatter-tab.active,
+.dark-mode .modern-style .visualizer-tab.active,
+.dark-mode .modern-style .deployer-tab.active,
+.dark-mode .modern-style .cron-tab.active,
+.dark-mode .modern-style .markdown-tab.active,
+.dark-mode .modern-style .diff-tab.active,
+.dark-mode .modern-style .bcrypt-tab.active {
+  background: linear-gradient(180deg, #2a2a2a 0%, #1f2937 100%);
+  box-shadow: 0 -4px 16px rgba(126, 34, 206, 0.4), 0 4px 8px rgba(168, 85, 247, 0.3);
+  animation: tabGlowDark 2s ease infinite;
+}
+
+/* ===== MODERN STYLE - INPUT FIELDS ===== */
+.modern-style input[type="text"],
+.modern-style input[type="number"],
+.modern-style textarea,
+.modern-style select {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.modern-style input[type="text"]:focus,
+.modern-style input[type="number"]:focus,
+.modern-style textarea:focus,
+.modern-style select:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2), 0 4px 12px rgba(102, 126, 234, 0.3);
+  transform: scale(1.02);
+}
+
+.dark-mode .modern-style input[type="text"],
+.dark-mode .modern-style input[type="number"],
+.dark-mode .modern-style textarea,
+.dark-mode .modern-style select {
+  background: rgba(30, 60, 114, 0.9);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+.dark-mode .modern-style input[type="text"]:focus,
+.dark-mode .modern-style input[type="number"]:focus,
+.dark-mode .modern-style textarea:focus,
+.dark-mode .modern-style select:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.2), 0 4px 12px rgba(126, 34, 206, 0.3);
+}
+
+/* ===== MODERN STYLE - CODE BLOCKS ===== */
+.modern-style pre,
+.modern-style code {
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  color: #f1f5f9;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  border-radius: 8px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace;
+}
+
+.dark-mode .modern-style pre,
+.dark-mode .modern-style code {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+/* ===== MODERN STYLE - COPY BUTTONS ===== */
+.modern-style .copy-button,
+.modern-style button[class*="copy"] {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modern-style .copy-button:hover,
+.modern-style button[class*="copy"]:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #f093fb 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.modern-style .copy-button.copied,
+.modern-style button[class*="copy"].copied {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  animation: bounce 0.5s ease;
+}
+
+.dark-mode .modern-style .copy-button,
+.dark-mode .modern-style button[class*="copy"] {
+  background: linear-gradient(135deg, #7e22ce 0%, #a855f7 100%);
+  box-shadow: 0 4px 12px rgba(126, 34, 206, 0.4);
+}
+
+.dark-mode .modern-style .copy-button:hover,
+.dark-mode .modern-style button[class*="copy"]:hover {
+  background: linear-gradient(135deg, #a855f7 0%, #3b82f6 100%);
+  box-shadow: 0 6px 16px rgba(126, 34, 206, 0.5);
+}
+
+/* ===== MODERN STYLE - CARDS AND SECTIONS ===== */
+.modern-style .card,
+.modern-style .section,
+.modern-style [class*="-section"],
+.modern-style [class*="-card"] {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  animation: slideInDown 0.5s ease;
+}
+
+.dark-mode .modern-style .card,
+.dark-mode .modern-style .section,
+.dark-mode .modern-style [class*="-section"],
+.dark-mode .modern-style [class*="-card"] {
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.95) 0%, rgba(46, 82, 152, 0.9) 100%);
+  border: 2px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 4px 20px rgba(126, 34, 206, 0.3);
+}
+
+/* ===== MODERN STYLE - TOOLBAR ===== */
+.modern-style .toolbar,
+.modern-style [class*="-toolbar"] {
+  background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+.dark-mode .modern-style .toolbar,
+.dark-mode .modern-style [class*="-toolbar"] {
+  background: linear-gradient(90deg, rgba(126, 34, 206, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
+  border-bottom-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 2px 8px rgba(126, 34, 206, 0.25);
+}
+
+/* ===== MODERN STYLE - TABS CONTAINER ===== */
+.modern-style .tabs-container,
+.modern-style [class*="-tabs-container"] {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+}
+
+.dark-mode .modern-style .tabs-container,
+.dark-mode .modern-style [class*="-tabs-container"] {
+  background: rgba(30, 60, 114, 0.95);
+  border-bottom-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 2px 8px rgba(126, 34, 206, 0.25);
+}
+
+/* ===== MODERN STYLE - WINDOWS/PANELS ===== */
+.modern-style .window,
+.modern-style .panel,
+.modern-style [class*="-window"],
+.modern-style [class*="-panel"] {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.25);
+  overflow: hidden;
+  animation: fadeInScale 0.6s ease;
+}
+
+.dark-mode .modern-style .window,
+.dark-mode .modern-style .panel,
+.dark-mode .modern-style [class*="-window"],
+.dark-mode .modern-style [class*="-panel"] {
+  background: rgba(30, 60, 114, 0.95);
+  border: 2px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 8px 24px rgba(126, 34, 206, 0.3);
+}
+
+/* ===== MODERN STYLE - STATUS MESSAGES ===== */
+.modern-style .status-message {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border-left: 4px solid #10b981;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.2);
+  border-radius: 8px;
+}
+
+.dark-mode .modern-style .status-message {
+  background: linear-gradient(135deg, rgba(30, 60, 114, 0.95) 0%, rgba(46, 82, 152, 0.9) 100%);
+  box-shadow: 0 4px 20px rgba(126, 34, 206, 0.3);
+}
+
+/* ===== MODERN STYLE - EMPTY STATE ===== */
+.modern-style .empty-state {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  padding: 24px;
+  border: 2px dashed rgba(102, 126, 234, 0.3);
+}
+
+.dark-mode .modern-style .empty-state {
+  background: linear-gradient(135deg, rgba(126, 34, 206, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+

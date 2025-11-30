@@ -1,0 +1,241 @@
+
+/*
+ * config-panel.css - UPDATED VERSION
+ * Standardized configuration panel design
+ */
+
+/* Configuration panel container */
+.config-panel {
+  width: 320px;
+  background-color: var(--bg-primary, #ffffff);
+  border-left: 1px solid var(--border-color, #e5e7eb);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Config panel when sidebar is on right (config panel on left) */
+.sidebar-right .config-panel {
+  border-left: none;
+  border-right: 1px solid var(--border-color, #e5e7eb);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  order: -1; /* Place config panel before main panel */
+}
+
+/* Configuration panel header */
+.config-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color, #e5e7eb);
+  background-color: var(--bg-secondary, #f9fafb);
+  flex-shrink: 0;
+}
+
+.config-header h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary, #111827);
+  margin: 0;
+}
+
+/* Close button for config panel */
+.close-config-button {
+  background: none;
+  border: none;
+  color: var(--text-tertiary, #6b7280);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--border-radius, 0.375rem);
+  transition: all var(--transition-fast, 0.15s ease);
+}
+
+.close-config-button:hover {
+  background-color: var(--bg-tertiary, #f3f4f6);
+  color: var(--text-primary, #111827);
+  transform: scale(1.1);
+}
+
+.close-config-button:active {
+  transform: scale(0.95);
+}
+
+/* Configuration content area */
+.config-content {
+  flex: 1;
+  padding: var(--spacing-md, 1rem);
+  overflow-y: auto;
+}
+
+/* Mode switch in config panel header */
+.config-mode-switch {
+  display: flex;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.config-mode-switch button {
+  flex: 1;
+  padding: 0.5rem 0;
+  background-color: #f9fafb;
+  border: none;
+  color: #4b5563;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.config-mode-switch button.active {
+  background-color: #4f46e5;
+  color: white;
+}
+
+/* Config section title */
+.config-section-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.5rem;
+}
+
+/* Form group for config options */
+.config-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.config-form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+/* Checkbox group */
+.config-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.config-checkbox input {
+  margin-right: 0.5rem;
+}
+
+.config-checkbox label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+/* File upload area */
+.config-file-upload {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px dashed #d1d5db;
+  border-radius: 0.375rem;
+  background-color: #f9fafb;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Sample buttons */
+.config-sample-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.config-sample-btn:hover {
+  background-color: #e5e7eb;
+}
+
+/* Config helper text */
+.config-helper-text {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+/* Dark mode styles */
+.dark-mode .config-panel {
+  background-color: var(--bg-primary, #1f2937);
+  border-color: var(--border-color, #374151);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .config-header {
+  background-color: var(--bg-secondary, #111827);
+  border-color: var(--border-color, #374151);
+}
+
+.dark-mode .config-header h3 {
+  color: var(--text-primary, #f3f4f6);
+}
+
+.dark-mode .close-config-button {
+  color: var(--text-tertiary, #9ca3af);
+}
+
+.dark-mode .close-config-button:hover {
+  background-color: var(--bg-tertiary, #374151);
+  color: var(--text-primary, #f3f4f6);
+}
+
+.dark-mode .config-mode-switch {
+  border-color: var(--border-color, #374151);
+}
+
+.dark-mode .config-mode-switch button {
+  background-color: var(--bg-secondary, #111827);
+  color: var(--text-secondary, #d1d5db);
+}
+
+.dark-mode .config-section-title {
+  color: var(--text-primary, #e5e7eb);
+  border-color: var(--border-color, #374151);
+}
+
+.dark-mode .config-form-group label {
+  color: var(--text-secondary, #9ca3af);
+}
+
+.dark-mode .config-file-upload {
+  background-color: var(--bg-secondary, #111827);
+  border-color: var(--border-color, #374151);
+  color: var(--text-primary, #e5e7eb);
+}
+
+.dark-mode .config-sample-btn {
+  background-color: var(--bg-tertiary, #374151);
+  border-color: var(--border-color, #4b5563);
+  color: var(--text-primary, #e5e7eb);
+}
+
+.dark-mode .config-sample-btn:hover {
+  background-color: var(--bg-tertiary, #4b5563);
+}
+
+.dark-mode .config-helper-text {
+  color: var(--text-tertiary, #9ca3af);
+}

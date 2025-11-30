@@ -1,0 +1,284 @@
+/* 
+ * common-components.css - UPDATED VERSION
+ * Standardized shared UI components for all tools
+ */
+
+/* ----- STANDARD BUTTON CLASSES ----- */
+
+/* Main action button - primary action for a component */
+.btn-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn-main:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-main:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Feature button - secondary actions like Format, Minify */
+.btn-feature {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  background-color: #f3f4f6;
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-feature:hover {
+  background-color: #e5e7eb;
+}
+
+.btn-feature:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Convert button - for data transformation operations */
+.btn-convert {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  background-color: #f0f9ff;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-convert:hover {
+  background-color: #e0f2fe;
+}
+
+/* Settings panel buttons */
+.btn-settings {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  text-align: left;
+  background-color: #f3f4f6;
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-settings:hover {
+  background-color: #e5e7eb;
+}
+
+/* Mode switch button */
+.btn-mode {
+  padding: 0.5rem 1.5rem;
+  background-color: #f3f4f6;
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-mode.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* ----- STANDARD FORM ELEMENTS ----- */
+
+/* Standard inputs */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="url"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+/* Standard select */
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: 0.375rem;
+  background-color: white;
+  font-size: 0.875rem;
+}
+
+/* Standard textarea */
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-light);
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  resize: vertical;
+}
+
+/* Code input area - specialized textarea */
+.code-input {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+  min-height: 200px;
+  height: 100%;
+  overflow: auto;
+  tab-size: 2;
+}
+
+/* ----- STANDARD LAYOUT CLASSES ----- */
+
+/* Tool container - base class for all tools */
+.tool-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1rem;
+  overflow: auto;
+}
+
+/* Group elements horizontally */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Standard form group */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+/* Tool description - standardized instructions */
+.tool-description {
+  margin-bottom: 1rem;
+  color: var(--text-gray);
+  font-size: 0.875rem;
+}
+
+/* ----- CONTENT DISPLAY STYLES ----- */
+
+/* Standardized output formatting */
+.formatted-output {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre;
+  word-break: normal;
+  word-wrap: normal;
+  overflow-x: auto;
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.375rem;
+}
+
+/* Mode switch container */
+.mode-switch {
+  display: flex;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.mode-switch .btn-mode {
+  flex: 1;
+  border-radius: 0;
+  text-align: center;
+}
+
+/* Add bottom spacing to push main action button */
+.input-container {
+  flex: 1;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .btn-feature {
+    background-color: #374151;
+    color: var(--text-light);
+    border-color: #4b5563;
+  }
+  
+  .btn-feature:hover {
+    background-color: #4b5563;
+  }
+  
+  .btn-convert {
+    background-color: #075985;
+    color: #e0f2fe;
+    border-color: #0369a1;
+  }
+  
+  .btn-convert:hover {
+    background-color: #0c4a6e;
+  }
+  
+  .btn-settings {
+    background-color: #374151;
+    color: var(--text-light);
+    border-color: #4b5563;
+  }
+  
+  .btn-settings:hover {
+    background-color: #4b5563;
+  }
+  
+  .btn-mode {
+    background-color: #374151;
+    color: var(--text-light);
+    border-color: #4b5563;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  select,
+  textarea {
+    background-color: #1f2937;
+    color: var(--text-light);
+    border-color: #374151;
+  }
+  
+  .formatted-output {
+    background-color: #1f2937;
+    color: var(--text-light);
+  }
+}

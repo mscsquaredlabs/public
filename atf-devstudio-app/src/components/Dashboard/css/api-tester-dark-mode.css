@@ -1,0 +1,740 @@
+/*
+ * api-tester-dark-mode.css
+ * Dark mode support specifically for ApiTester component
+ */
+
+/* Main ApiTester container */
+.dark-mode .api-tester {
+  background-color: var(--bg-primary, #0f172a);
+  color: var(--text-primary, #f8fafc);
+}
+
+/* Tool description */
+.dark-mode .api-tester .tool-description {
+  background-color: rgba(139, 92, 246, 0.1);
+  color: var(--text-primary, #f8fafc);
+  border-left-color: #8b5cf6;
+}
+
+/* URL Row Elements */
+.dark-mode .api-tester .method-select {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .api-tester .method-select:focus {
+  border-color: var(--primary-color, #7c3aed);
+  background-color: var(--bg-secondary, #1e293b);
+}
+
+.dark-mode .api-tester .url-input {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .api-tester .url-input:focus {
+  border-color: var(--primary-color, #7c3aed);
+  background-color: var(--bg-secondary, #1e293b);
+}
+
+.dark-mode .api-tester .url-input::placeholder {
+  color: var(--text-muted, #94a3b8);
+}
+
+/* Button styling */
+.dark-mode .api-tester .btn-primary {
+  background-color: var(--primary-color, #7c3aed);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--primary-color, #7c3aed);
+}
+
+.dark-mode .api-tester .btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover, #8b5cf6);
+  border-color: var(--primary-hover, #8b5cf6);
+}
+
+.dark-mode .api-tester .btn-secondary {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-secondary, #e2e8f0);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .api-tester .btn-secondary:hover:not(:disabled) {
+  background-color: var(--bg-hover, #475569);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-dark, #64748b);
+}
+
+/* Tab buttons */
+.dark-mode .api-tester .tab-button {
+  color: var(--text-tertiary, #cbd5e1);
+  border-bottom-color: transparent;
+}
+
+.dark-mode .api-tester .tab-button:hover {
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .api-tester .tab-button.active {
+  color: var(--primary-color, #7c3aed);
+  border-bottom-color: var(--primary-color, #7c3aed);
+}
+
+/* Request content form elements */
+.dark-mode .api-tester .headers-textarea,
+.dark-mode .api-tester .body-textarea {
+  background-color: var(--bg-secondary, #1e293b);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .api-tester .headers-textarea:focus,
+.dark-mode .api-tester .body-textarea:focus {
+  border-color: var(--primary-color, #7c3aed);
+  background-color: var(--bg-tertiary, #334155);
+}
+
+.dark-mode .api-tester .headers-textarea::placeholder,
+.dark-mode .api-tester .body-textarea::placeholder {
+  color: var(--text-muted, #94a3b8);
+}
+
+/* Body format and auth type selectors */
+.dark-mode .api-tester .body-format label,
+.dark-mode .api-tester .auth-type label {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .api-tester .body-format-select,
+.dark-mode .api-tester .auth-type-select {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .api-tester .body-format-select:focus,
+.dark-mode .api-tester .auth-type-select:focus {
+  border-color: var(--primary-color, #7c3aed);
+  background-color: var(--bg-secondary, #1e293b);
+}
+
+/* Auth field styling */
+.dark-mode .api-tester .auth-field label {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .api-tester .auth-field input {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .api-tester .auth-field input:focus {
+  border-color: var(--primary-color, #7c3aed);
+  background-color: var(--bg-secondary, #1e293b);
+}
+
+.dark-mode .api-tester .auth-field input::placeholder {
+  color: var(--text-muted, #94a3b8);
+}
+
+/* Loading indicator */
+.dark-mode .api-tester .loading-indicator {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .api-tester .spinner {
+  border-color: var(--border-color, #475569);
+  border-top-color: var(--primary-color, #7c3aed);
+}
+
+/* Response elements */
+.dark-mode .api-tester .response-header {
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .api-tester .status-2xx {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.dark-mode .api-tester .status-3xx {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.dark-mode .api-tester .status-4xx,
+.dark-mode .api-tester .status-5xx {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.dark-mode .api-tester .response-time {
+  color: var(--text-tertiary, #cbd5e1);
+}
+
+.dark-mode .api-tester .response-headers {
+  background-color: var(--bg-secondary, #1e293b);
+  border-color: var(--border-color, #475569);
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .api-tester .header-name {
+  color: var(--primary-color, #7c3aed);
+}
+
+.dark-mode .api-tester .response-body {
+  background-color: var(--bg-secondary, #1e293b);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+/* Validation errors */
+.dark-mode .api-tester .validation-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.dark-mode .api-tester .error-details {
+  background-color: rgba(239, 68, 68, 0.05);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: var(--text-primary, #f8fafc);
+}
+
+/* Formatted curl command */
+.dark-mode .api-tester .formatted-curl {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid var(--border-color, #475569);
+}
+
+/* Advanced mode indicator */
+.dark-mode .api-tester .advanced-mode-indicator {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .api-tester .environment-badge,
+.dark-mode .api-tester .project-badge {
+  background-color: rgba(124, 58, 237, 0.2);
+  color: #a78bfa;
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+/* Settings reminder */
+.dark-mode .api-tester .settings-reminder {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .api-tester .settings-btn {
+  color: var(--text-tertiary, #cbd5e1);
+  border-color: var(--border-color, #475569);
+  background-color: transparent;
+}
+
+.dark-mode .api-tester .settings-btn:hover {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--primary-color, #7c3aed);
+  border-color: var(--primary-color, #7c3aed);
+}
+
+/* ============================================
+   CONFIG PANEL DARK MODE SUPPORT
+   ============================================ */
+
+/* Main config panel container */
+.dark-mode .api-tester-config {
+  background-color: var(--bg-primary, #0f172a);
+  color: var(--text-primary, #f8fafc);
+}
+
+/* Form groups and labels */
+.dark-mode .api-tester-config .form-group {
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .api-tester-config label {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+/* Form inputs */
+.dark-mode .api-tester-config select,
+.dark-mode .api-tester-config input {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .api-tester-config select:focus,
+.dark-mode .api-tester-config input:focus {
+  border-color: var(--primary-color, #7c3aed);
+  background-color: var(--bg-secondary, #1e293b);
+}
+
+.dark-mode .api-tester-config input::placeholder {
+  color: var(--text-muted, #94a3b8);
+}
+
+/* Checkbox groups */
+.dark-mode .api-tester-config .checkbox-group {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .api-tester-config .checkbox-group input[type="checkbox"] {
+  accent-color: var(--primary-color, #7c3aed);
+}
+
+/* Request history list */
+.dark-mode .api-tester-config .request-history-list {
+  border-color: var(--border-color, #475569);
+  background-color: var(--bg-secondary, #1e293b);
+}
+
+.dark-mode .api-tester-config .history-item {
+  border-color: var(--border-color, #475569);
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .api-tester-config .history-item:hover {
+  background-color: var(--bg-tertiary, #334155);
+}
+
+.dark-mode .api-tester-config .history-method {
+  color: var(--text-tertiary, #cbd5e1);
+}
+
+.dark-mode .api-tester-config .history-url {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .api-tester-config .history-time {
+  color: var(--text-muted, #94a3b8);
+}
+
+.dark-mode .api-tester-config .empty-history {
+  color: var(--text-muted, #94a3b8);
+}
+
+/* Config section titles */
+.dark-mode .api-tester-config .config-section-title {
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+/* Mode switch */
+.dark-mode .api-tester-config .config-mode-switch-container {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .api-tester-config .mode-label {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .api-tester-config .mode-label.active {
+  color: var(--primary-color, #7c3aed);
+}
+
+.dark-mode .api-tester-config .slider {
+  background-color: var(--bg-tertiary, #334155);
+}
+
+.dark-mode .api-tester-config .slider:before {
+  background-color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .api-tester-config input:checked + .slider {
+  background-color: var(--primary-color, #7c3aed);
+}
+
+/* ============================================
+   ADVANCED FEATURES DARK MODE SUPPORT
+   ============================================ */
+
+/* Config tabs */
+.dark-mode .config-tabs {
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .config-tabs .tab-button {
+  color: var(--text-tertiary, #cbd5e1);
+  border-bottom-color: transparent;
+}
+
+.dark-mode .config-tabs .tab-button:hover {
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .config-tabs .tab-button.active {
+  color: var(--primary-color, #7c3aed);
+  border-bottom-color: var(--primary-color, #7c3aed);
+}
+
+/* Input with button */
+.dark-mode .input-with-button input {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .input-with-button button {
+  background-color: var(--primary-color, #7c3aed);
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .input-with-button button:hover:not(:disabled) {
+  background-color: var(--primary-hover, #8b5cf6);
+}
+
+/* Variable form and list */
+.dark-mode .variable-form input {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .variable-list {
+  border-color: var(--border-color, #475569);
+  background-color: var(--bg-secondary, #1e293b);
+}
+
+.dark-mode .variable-item {
+  border-color: var(--border-color, #475569);
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .variable-key {
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .variable-value {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .delete-button {
+  color: var(--text-muted, #94a3b8);
+}
+
+.dark-mode .delete-button:hover {
+  color: #ef4444;
+}
+
+/* Info box */
+.dark-mode .info-box {
+  background-color: var(--bg-secondary, #1e293b);
+  border: 1px solid var(--border-color, #475569);
+}
+
+.dark-mode .info-title {
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .info-content {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .info-content code {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-primary, #f8fafc);
+}
+
+/* Projects and requests */
+.dark-mode .projects-list {
+  border-color: var(--border-color, #475569);
+  background-color: var(--bg-secondary, #1e293b);
+}
+
+.dark-mode .project-item {
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .project-header {
+  background-color: var(--bg-tertiary, #334155);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .project-name,
+.dark-mode .project-title {
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .request-item {
+  border-color: var(--border-color, #475569);
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .request-name {
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .request-url {
+  color: var(--text-tertiary, #cbd5e1);
+}
+
+.dark-mode .request-method {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .action-button {
+  background-color: var(--bg-tertiary, #334155);
+  border-color: var(--border-color, #475569);
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .action-button:hover {
+  background-color: var(--bg-hover, #475569);
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .load-button {
+  color: var(--primary-color, #7c3aed);
+}
+
+.dark-mode .load-button:hover {
+  border-color: var(--primary-color, #7c3aed);
+  background-color: rgba(124, 58, 237, 0.1);
+}
+
+.dark-mode .empty-message {
+  color: var(--text-muted, #94a3b8);
+}
+
+/* Action buttons */
+.dark-mode .action-btn {
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .btn-load {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.dark-mode .btn-load:hover {
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+.dark-mode .btn-delete {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.dark-mode .btn-delete:hover {
+  background-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Response history */
+.dark-mode .response-history-list {
+  border-color: var(--border-color, #475569);
+  background-color: var(--bg-secondary, #1e293b);
+}
+
+.dark-mode .response-history-item {
+  border-color: var(--border-color, #475569);
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .response-history-item:hover {
+  background-color: var(--bg-tertiary, #334155);
+}
+
+.dark-mode .response-history-item.selected {
+  background-color: rgba(124, 58, 237, 0.2);
+}
+
+.dark-mode .response-history-time {
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .response-history-duration {
+  color: var(--text-muted, #94a3b8);
+}
+
+.dark-mode .compare-button {
+  background-color: var(--primary-color, #7c3aed);
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .compare-button:hover {
+  background-color: var(--primary-hover, #8b5cf6);
+}
+
+/* Subsection titles */
+.dark-mode .subsection-title {
+  color: var(--text-primary, #f8fafc);
+}
+
+/* Method badges */
+.dark-mode .method-badge {
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .method-get {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.dark-mode .method-post {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.dark-mode .method-put {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.dark-mode .method-delete {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.dark-mode .method-patch {
+  background-color: rgba(139, 92, 246, 0.2);
+  color: #8b5cf6;
+}
+
+.dark-mode .method-head,
+.dark-mode .method-options {
+  background-color: var(--bg-tertiary, #334155);
+  color: var(--text-secondary, #e2e8f0);
+}
+
+/* Save request improvements */
+.dark-mode .save-request-info {
+  color: var(--text-muted, #94a3b8);
+}
+
+.dark-mode .save-request-url {
+  color: var(--text-tertiary, #cbd5e1);
+}
+
+.dark-mode .suggest-name-button {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.dark-mode .suggest-name-button:hover {
+  background-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Project card improvements */
+.dark-mode .project-card {
+  background-color: var(--bg-secondary, #1e293b);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .projects-container {
+  color: var(--text-primary, #f8fafc);
+}
+
+/* Button row improvements */
+.dark-mode .button-row {
+  color: var(--text-primary, #f8fafc);
+}
+
+/* ============================================
+   RESULTS AREA CONTENT DARK MODE SUPPORT
+   ============================================ */
+
+/* Response container styling in results area */
+.dark-mode .response-container {
+  background-color: transparent;
+  color: var(--text-primary, #f8fafc);
+}
+
+.dark-mode .response-section-title {
+  color: var(--text-primary, #f8fafc);
+  border-bottom: 1px solid var(--border-color, #475569);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dark-mode .response-header {
+  color: var(--text-primary, #f8fafc);
+  margin-bottom: 1rem;
+}
+
+.dark-mode .response-headers {
+  background-color: var(--bg-secondary, #1e293b);
+  border-color: var(--border-color, #475569);
+  color: var(--text-secondary, #e2e8f0);
+}
+
+.dark-mode .header-item {
+  color: var(--text-secondary, #e2e8f0);
+  margin-bottom: 0.25rem;
+}
+
+.dark-mode .header-name {
+  color: var(--primary-color, #7c3aed);
+  font-weight: 600;
+}
+
+.dark-mode .response-body {
+  background-color: var(--bg-secondary, #1e293b);
+  color: var(--text-primary, #f8fafc);
+  border-color: var(--border-color, #475569);
+}
+
+.dark-mode .no-content {
+  color: var(--text-muted, #94a3b8);
+  font-style: italic;
+}
+
+/* Status codes in dark mode */
+.dark-mode .status-2xx {
+  background-color: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+}
+
+.dark-mode .status-3xx {
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.dark-mode .status-4xx,
+.dark-mode .status-5xx {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.dark-mode .response-time {
+  color: var(--text-tertiary, #cbd5e1);
+}
+
+/* Scrollbar for dark mode in ApiTester specific areas */
+.dark-mode .api-tester ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark-mode .api-tester ::-webkit-scrollbar-track {
+  background-color: var(--bg-secondary, #1e293b);
+  border-radius: 4px;
+}
+
+.dark-mode .api-tester ::-webkit-scrollbar-thumb {
+  background-color: var(--border-color, #475569);
+  border-radius: 4px;
+}
+
+.dark-mode .api-tester ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border-dark, #64748b);
+}
+
+/* Focus states for accessibility */
+.dark-mode .api-tester *:focus-visible {
+  outline: 2px solid var(--primary-color, #7c3aed);
+  outline-offset: 2px;
+}
+
+/* Selection styling */
+.dark-mode .api-tester ::selection {
+  background-color: var(--primary-color, #7c3aed);
+  color: var(--text-primary, #f8fafc);
+}

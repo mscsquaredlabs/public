@@ -1,0 +1,42 @@
+/*
+ * dashboard-settings.css
+ * Styles for the Dashboard Settings component
+ */
+
+.dashboard-settings {
+  padding: 0;
+}
+
+.dashboard-settings .config-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-settings .config-form-group:last-child {
+  margin-bottom: 0;
+}
+
+.dashboard-settings .config-option {
+  margin-top: 0.5rem;
+}
+
+.dashboard-settings .config-helper-text {
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+/* Dark mode styles */
+.dark-mode .dashboard-settings .config-section-title {
+  color: var(--text-primary, #e5e7eb);
+  border-color: var(--border-color, #374151);
+}
+
+.dark-mode .dashboard-settings .config-form-group label {
+  color: var(--text-secondary, #d1d5db);
+}
+
+.dark-mode .dashboard-settings .config-helper-text {
+  color: var(--text-tertiary, #9ca3af);
+}
+
+

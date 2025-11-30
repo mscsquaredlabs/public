@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4a6ee0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #3a5ac0;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Terminal API Test</h1>
+    <div class="form-group">
+        <label for="command">Command:</label>
+        <input type="text" id="command" style="width: 300px;" value="dir" />
+    </div>
+    <div class="form-group">
+        <label for="directory">Working Directory:</label>
+        <input type="text" id="directory" style="width: 300px;" value="C:\" />
+    </div>
+    <button id="execute">Execute Command</button>
+    <button id="test-api">Test API Connection</button>
+    
+    <div id="result">
+        <h3>Result:</h3>
+        <pre id="output">Results will appear here...</pre>
+    </div>
+
+    <script>
+        document.getElementById('execute').addEventListener('click', async () => {
+            const command = document.getElementById('command').value;
+            const directory = document.getElementById('directory').value;
+            const outputEl = document.getElementById('output');
+            
+            outputEl.textContent = 'Executing command...';
+            
+            try {
+                const response = await fetch('/api/terminal/exec', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        command,
+                        cwd: directory
+                    })
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                outputEl.textContent = JSON.stringify(data, null, 2);
+                
+                // Update directory input if command changed directory
+                if (data.newDirectory && data.success) {
+                    document.getElementById('directory').value = data.newDirectory;
+                }
+            } catch (error) {
+                outputEl.textContent = `Error: ${error.message}`;
+            }
+        });
+        
+        document.getElementById('test-api').addEventListener('click', async () => {
+            const outputEl = document.getElementById('output');
+            outputEl.textContent = 'Testing API connection...';
+            
+            try {
+                const response = await fetch('/api/terminal/test');
+                if (!response.ok) {
+                    throw new Error(`Error ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                outputEl.textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                outputEl.textContent = `Error: ${error.message}`;
+            }
+        });
+    </script>
+</body>
+</html>

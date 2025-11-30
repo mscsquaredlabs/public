@@ -1,0 +1,102 @@
+/* StandardToggleSwitch.css */
+/* Reusable toggle switch component styles */
+
+.toggle-switch-container {
+    margin: 16px 0;
+  }
+  
+  .toggle-switch-labels {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  
+  .toggle-label {
+    font-size: 0.85rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .toggle-label.active {
+    color: #4f46e5;
+    font-weight: 500;
+  }
+  
+  .dark-mode .toggle-label {
+    color: #9ca3af;
+  }
+  
+  .dark-mode .toggle-label.active {
+    color: #818cf8;
+  }
+  
+  .toggle-switch-wrapper {
+    display: inline-block;
+  }
+  
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+  }
+  
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #e5e7eb;
+    transition: .4s;
+    border-radius: 24px;
+  }
+  
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .toggle-slider {
+    background-color: #4f46e5;
+  }
+  
+  input:focus + .toggle-slider {
+    box-shadow: 0 0 1px #4f46e5;
+  }
+  
+  input:checked + .toggle-slider:before {
+    transform: translateX(24px);
+  }
+  
+  .dark-mode .toggle-slider {
+    background-color: #4b5563;
+  }
+  
+  .dark-mode input:checked + .toggle-slider {
+    background-color: #818cf8;
+  }
+  
+  .dark-mode input:focus + .toggle-slider {
+    box-shadow: 0 0 1px #818cf8;
+  }
+  
+  .dark-mode .toggle-slider:before {
+    background-color: #e5e7eb;
+  }

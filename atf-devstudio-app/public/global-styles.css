@@ -1,0 +1,543 @@
+/* 
+ * global-styles.css
+ * Centralized styling for consistent UI across all components
+ */
+
+/* Base variables */
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --secondary-color: #f3f4f6;
+    --secondary-hover: #e5e7eb;
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+    --info-color: #3b82f6;
+    
+    --sidebar-bg: #1f2937;
+    --sidebar-hover: #374151;
+    --sidebar-active: #374151;
+    
+    --text-light: #f3f4f6;
+    --text-dark: #111827;
+    --text-gray: #6b7280;
+    
+    --border-light: #e5e7eb;
+    --border-dark: #4b5563;
+    
+    --bg-light: #f9fafb;
+    --bg-dark: #111827;
+    --bg-input: #ffffff;
+  }
+  
+  /* ----- STANDARD BUTTON CLASSES ----- */
+  
+  /* Main action button - primary action for a component */
+  .btn-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+  }
+  
+  .btn-main:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+  }
+  
+  .btn-main:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Feature button - secondary actions like Format, Minify */
+  .btn-feature {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border: 1px solid var(--border-light);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-feature:hover:not(:disabled) {
+    background-color: var(--secondary-hover);
+  }
+  
+  .btn-feature:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Convert button - for data transformation operations */
+  .btn-convert {
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    background-color: #f0f9ff;
+    color: #0369a1;
+    border: 1px solid #bae6fd;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-convert:hover:not(:disabled) {
+    background-color: #e0f2fe;
+  }
+  
+  .btn-convert:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  /* Settings button */
+  .btn-settings {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-light);
+    border-radius: 0.375rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  .btn-settings:hover {
+    background-color: var(--secondary-hover);
+  }
+  
+  .btn-settings.active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn-settings .settings-icon {
+    font-size: 1.25rem;
+  }
+  
+  /* Config panel buttons */
+  .btn-panel {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    text-align: left;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border: 1px solid var(--border-light);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-panel:hover {
+    background-color: var(--secondary-hover);
+  }
+  
+  /* Mode switch button */
+  .btn-mode{
+    padding: 0.5rem 1.5rem;
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border: 1px solid var(--border-light);
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-mode.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+  }
+  
+
+  
+ /* Toggle switch for normal mode */
+ .mode-label {
+  color: #9ca3af;
+  font-weight:bolder;
+}
+
+.mode-label.active {
+  color: blue
+}
+
+  /* ----- STANDARD FORM ELEMENTS ----- */
+  
+  /* Standard inputs */
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-light);
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+  }
+  
+  /* Standard select */
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-light);
+    border-radius: 0.375rem;
+    background-color: white;
+    font-size: 0.875rem;
+  }
+  
+  /* Standard textarea */
+  textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-light);
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    resize: vertical;
+  }
+  
+  /* Code input area - specialized textarea */
+  .code-input {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    min-height: 200px;
+    height: 100%;
+    overflow: auto;
+    tab-size: 2;
+  }
+  
+  /* ----- STANDARD LAYOUT CLASSES ----- */
+  
+  /* Tool container - base class for all tools */
+  .tool-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+    overflow: auto;
+  }
+  
+  /* Group elements horizontally */
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Standard form group */
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+  
+  /* Tool description - standardized instructions */
+  .tool-description {
+    margin-bottom: 1rem;
+    color: var(--text-gray);
+    font-size: 0.875rem;
+  }
+  
+  /* ----- CONTENT DISPLAY STYLES ----- */
+  
+  /* Standardized output formatting */
+  .formatted-output {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-all;
+    padding: 1rem;
+    background-color: var(--bg-light);
+    border-radius: 0.375rem;
+  }
+  
+  /* ----- RESULTS AREA STYLING ----- */
+  
+  /* Results status indicators */
+  .results-content.success {
+    border: 1px solid var(--success-color);
+  }
+  
+  .results-content.error {
+    border: 1px solid var(--error-color);
+  }
+  
+  .results-content.warning {
+    border: 1px solid var(--warning-color);
+  }
+  
+  .results-content.info {
+    border: 1px solid var(--info-color);
+  }
+  
+  /* Results message header */
+  .results-content.success .result-message {
+    background-color: var(--success-color);
+    color: white;
+  }
+  
+  .results-content.error .result-message {
+    background-color: var(--error-color);
+    color: white;
+  }
+  
+  .results-content.warning .result-message {
+    background-color: var(--warning-color);
+    color: white;
+  }
+  
+  .results-content.info .result-message {
+    background-color: var(--info-color);
+    color: white;
+  }
+  
+  /* Status Icons */
+  .success-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+  
+  .error-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+  
+  .warning-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+  
+  .info-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+  }
+  
+  /* ----- DARK MODE ADJUSTMENTS ----- */
+  
+  @media (prefers-color-scheme: dark) {
+    /* Button variants */
+    .btn-feature, .btn-mode, .btn-settings {
+      background-color: #374151;
+      color: var(--text-light);
+      border-color: var(--border-dark);
+    }
+    
+    .btn-feature:hover:not(:disabled), .btn-mode:hover, .btn-settings:hover {
+      background-color: #4b5563;
+    }
+    
+    .btn-convert {
+      background-color: #075985;
+      color: #e0f2fe;
+      border-color: #0369a1;
+    }
+    
+    .btn-convert:hover:not(:disabled) {
+      background-color: #0c4a6e;
+    }
+    
+    .btn-panel {
+      background-color: #374151;
+      color: var(--text-light);
+      border-color: var(--border-dark);
+    }
+    
+    .btn-panel:hover {
+      background-color: #4b5563;
+    }
+    
+    /* Form elements */
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    select,
+    textarea {
+      background-color: #1f2937;
+      color: var(--text-light);
+      border-color: var(--border-dark);
+    }
+    
+    /* Output styling */
+    .formatted-output {
+      background-color: #1f2937;
+      color: var(--text-light);
+    }
+  }
+
+  /* Global styles for tool descriptions, validation buttons, and results area */
+
+/* Tool description - Make prominent and highlighted */
+.tool-description {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: #4f2d7f !important; /* Dark purple color */
+  margin-bottom: 1.25rem !important;
+  padding: 0.75rem !important;
+  background-color: #f8f6fc !important; /* Light purple background */
+  border-left: 4px solid #4f2d7f !important;
+  border-radius: 0 0.375rem 0.375rem 0 !important;
+}
+
+/* Tool container layout adjustments */
+.tool-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Results area when positioned inline */
+.results-area.inline {
+  margin-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: none;
+  padding-top: 1rem;
+  flex: 1 1 auto; /* Allow it to grow as needed */
+}
+
+/* Results header for inline results */
+.results-area.inline .results-header {
+  padding: 0 1rem 0.5rem 1rem;
+}
+
+/* Results content for inline results */
+.results-area.inline .results-content {
+  margin: 0 1rem 1rem 1rem;
+}
+
+
+/* File upload placeholder */
+.file-upload-placeholder {
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+  border: 1px dashed #d1d5db;
+  border-radius: 0.375rem;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.file-upload-placeholder svg {
+  width: 3rem;
+  height: 2rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+/* Button styling */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Primary action buttons - for ALL feature buttons and main validate button */
+.btn-primary {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #4338ca;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Main validate button - larger and full width */
+.validate-button {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.25rem; /* tweak this to taste */
+}
+
+/* Status icons in results */
+.success-icon,
+.error-icon,
+.warning-icon,
+.info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* Tooltips for all interactive elements */
+[title] {
+  position: relative;
+}
+
+:root.dark-mode {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+body.dark-mode {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .tool-description {
+    color: #b69edb !important; /* Lighter purple for dark mode */
+    background-color: #2d1b47 !important; /* Darker purple background */
+    border-left-color: #b69edb !important;
+  }
+
+  .results-area.inline {
+    border-color: #374151;
+  }
+
+}

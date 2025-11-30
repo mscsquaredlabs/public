@@ -1,0 +1,712 @@
+/* 
+ * standardized.css
+ * A centralized, standardized CSS for the ATF Dev Studio
+ * Fixes dark mode issues and standardizes components across the application
+ */
+
+/* ----- THEME VARIABLES ----- */
+:root {
+  /* Core color palette - Light mode */
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-active: #312e81;
+  --primary-subtle: #c7d2fe;
+  
+  --secondary-color: #f3f4f6;
+  --secondary-hover: #e5e7eb;
+  
+  --success-color: #10b981;
+  --success-bg: #d1fae5;
+  --success-hover: #059669;
+  
+  --error-color: #ef4444;
+  --error-bg: #fee2e2;
+  --error-hover: #dc2626;
+  
+  --warning-color: #f59e0b;
+  --warning-bg: #fef3c7;
+  --warning-hover: #d97706;
+  
+  --info-color: #3b82f6;
+  --info-bg: #dbeafe;
+  --info-hover: #2563eb;
+  
+  /* Text colors */
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+  --text-light: #f3f4f6;
+  --text-muted: #9ca3af;
+  
+  /* Background colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --bg-input: #ffffff;
+  
+  /* Border colors */
+  --border-color: #e5e7eb;
+  --border-light: #f3f4f6;
+  --border-dark: #9ca3af;
+  
+  /* Sidebar colors */
+  --sidebar-bg: #1f2937;
+  --sidebar-hover: #374151;
+  --sidebar-active: #4f46e5;
+  --sidebar-text: #f3f4f6;
+  --sidebar-muted: #9ca3af;
+  
+  /* Shadow effects */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  
+  /* Transition speed */
+  --transition-speed: 0.2s;
+}
+
+/* Dark mode variables */
+.dark-mode {
+  /* Core color palette - Dark mode */
+  --primary-color: #6366f1;
+  --primary-hover: #818cf8;
+  --primary-active: #a5b4fc;
+  --primary-subtle: #3730a3;
+  
+  --secondary-color: #374151;
+  --secondary-hover: #4b5563;
+  
+  /* Text colors */
+  --text-primary: #f9fafb;
+  --text-secondary: #e5e7eb;
+  --text-tertiary: #d1d5db;
+  --text-light: #f3f4f6;
+  --text-muted: #9ca3af;
+  
+  /* Background colors */
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --bg-input: #1f2937;
+  
+  /* Border colors */
+  --border-color: #4b5563;
+  --border-light: #374151;
+  --border-dark: #6b7280;
+  
+  /* Status colors with improved contrast for dark mode */
+  --success-color: #34d399;
+  --success-bg: #064e3b;
+  --success-hover: #10b981;
+  
+  --error-color: #f87171;
+  --error-bg: #7f1d1d;
+  --error-hover: #ef4444;
+  
+  --warning-color: #fbbf24;
+  --warning-bg: #78350f;
+  --warning-hover: #f59e0b;
+  
+  --info-color: #60a5fa;
+  --info-bg: #1e3a8a;
+  --info-hover: #3b82f6;
+}
+
+/* ----- COMMON REUSABLE COMPONENTS ----- */
+
+/* Standard Toggle Switch */
+.standard-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--secondary-color);
+  transition: .4s;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
+input:checked + .toggle-slider {
+  background-color: var(--primary-color);
+}
+
+input:focus + .toggle-slider {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked + .toggle-slider:before {
+  transform: translateX(22px);
+}
+
+/* Mode labels in toggle */
+.mode-label {
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+  font-weight: 500;
+  transition: var(--transition-speed) ease;
+}
+
+.mode-label.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.dark-mode .mode-label.active {
+  color: var(--primary-active);
+}
+
+/* ----- CONFIGURATION PANEL STYLING ----- */
+
+/* Configuration panel container */
+.config-panel {
+  width: 320px;
+  background-color: var(--bg-primary);
+  border-left: 1px solid var(--border-color);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Configuration panel header */
+.config-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.config-header h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Close button for config panel */
+.close-config-button {
+  background: none;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+}
+
+.close-config-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-primary);
+}
+
+/* Configuration content area */
+.config-content {
+  flex: 1;
+  padding: 1rem;
+}
+
+/* Config section title */
+.config-section-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+/* Form group for config options */
+.config-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.config-form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Sample buttons in config panel */
+.config-sample-btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: var(--secondary-color);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color var(--transition-speed);
+}
+
+.config-sample-btn:hover {
+  background-color: var(--secondary-hover);
+}
+
+/* ----- RESULTS AREA STYLING ----- */
+
+/* Base results area container */
+.results-area {
+  flex: 1 1 auto;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-color);
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+/* Results header */
+.results-header {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1;
+}
+
+.results-header h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Results header actions */
+.results-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Results action buttons */
+.results-action-button {
+  padding: 6px 12px;
+  background-color: var(--secondary-color);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color var(--transition-speed);
+}
+
+.results-action-button:hover {
+  background-color: var(--secondary-hover);
+  color: var(--text-primary);
+}
+
+/* Results content container */
+.results-content {
+  flex: 1 1 auto;
+  overflow: auto;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  margin: 0 1rem 1rem 1rem;
+  background-color: var(--bg-primary);
+}
+
+/* Status styles for results */
+.results-content.success {
+  border-color: var(--success-color);
+}
+
+.results-content.error {
+  border-color: var(--error-color);
+}
+
+.results-content.warning {
+  border-color: var(--warning-color);
+}
+
+.results-content.info {
+  border-color: var(--info-color);
+}
+
+/* Result message at the top */
+.result-message {
+  flex: 0 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.results-content.success .result-message {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.results-content.error .result-message {
+  background-color: var(--error-color);
+  color: white;
+}
+
+.results-content.warning .result-message {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.results-content.info .result-message {
+  background-color: var(--info-color);
+  color: white;
+}
+
+/* Result details below message */
+.result-details {
+  padding: 12px 16px;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Main result content area */
+.result-content {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 16px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Status Icons */
+.success-icon, .error-icon, .warning-icon, .info-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* For placeholder when no results */
+.results-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Maximized results area */
+.results-area.maximized {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  margin: 0;
+  padding: 1rem;
+  height: 100vh;
+  width: 100vw;
+  max-height: none;
+  background-color: var(--bg-primary);
+}
+
+.results-area.maximized .results-content {
+  max-height: calc(100vh - 60px);
+  height: calc(100vh - 60px);
+}
+
+/* ----- SPECIFIC COMPONENT FIXES ----- */
+
+/* JSON/XML/YAML Validator text area */
+.code-input {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px;
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  resize: vertical;
+  min-height: 200px;
+  height: 100%;
+  width: 100%;
+  tab-size: 2;
+}
+
+/* Code Diff styling */
+.diff-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 350px;
+  height: 100%;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.split-view {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.left-panel, .right-panel {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  min-height: 0;
+  overflow: hidden;
+  border-right: 1px solid var(--border-color);
+}
+
+.right-panel {
+  border-right: none;
+}
+
+.left-panel h3, .right-panel h3 {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0.75rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.diff-content {
+  flex: 1 1 auto;
+  overflow: auto;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.diff-summary {
+  padding: 10px;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Added lines in diff */
+.diff-added {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+.dark-mode .diff-added {
+  background-color: rgba(52, 211, 153, 0.1);
+  color: var(--success-color);
+}
+
+/* Removed lines in diff */
+.diff-removed {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--error-color);
+}
+
+.dark-mode .diff-removed {
+  background-color: rgba(248, 113, 113, 0.1);
+  color: var(--error-color);
+}
+
+/* Table styling for diff view */
+.diff-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/* rows */
+.diff-table tr {
+  width: 100%;
+}
+
+/* all cells */
+.diff-table td {
+  padding: 0;                 /* kill default cell padding */
+  white-space: pre;
+  vertical-align: top;
+}
+
+/* line-number column (works for both class names used) */
+.diff-table td.line-num,
+.diff-table .line-number {
+  width: 40px;
+  text-align: left;
+  user-select: none;
+  background-color: var(--bg-secondary);
+  color: var(--text-tertiary);
+  border-right: 1px solid var(--border-color);
+}
+
+/* code cells – make them flush */
+.diff-table td.code,
+.diff-table tr.spacer td.code {
+  padding: 0 !important;
+}
+
+
+
+/* ----- ACTION BUTTON STANDARDIZATION ----- */
+
+/* Primary action button - for main actions like Validate */
+.btn-primary, .btn-main {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.btn-primary:hover:not(:disabled), .btn-main:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+.btn-primary:disabled, .btn-main:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Secondary buttons - for actions like Format, Minify */
+.btn-feature, .btn-secondary {
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  background-color: var(--secondary-color);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.btn-feature:hover:not(:disabled), .btn-secondary:hover:not(:disabled) {
+  background-color: var(--secondary-hover);
+}
+
+.btn-feature:disabled, .btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Validate button - main action */
+.validate-button {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Button groups */
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ----- SCROLLBAR STYLING ----- */
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 6px;
+  border: 3px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+/* ----- TRANSITION EFFECTS ----- */
+
+/* Ensure transitions are smooth */
+.dashboard-container,
+.main-content,
+.content-area,
+.main-header,
+.sidebar,
+.results-area,
+button,
+input,
+select,
+textarea,
+.toggle-switch,
+.mode-label {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}

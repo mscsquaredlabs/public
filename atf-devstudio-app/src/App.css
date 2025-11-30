@@ -1,0 +1,417 @@
+/* Import global styles */
+@import '/global-styles.css';
+
+
+@import './standardized.css';
+
+
+/* App container */
+.app-container {
+  width: 100%;
+  height: 100vh;
+}
+
+/* ----- VALIDATOR COMPONENTS ----- */
+
+/* Base validator styling shared across JSON/XML/YAML */
+.validator-component {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.input-area {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.input-area textarea {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  padding: 1rem;
+  font-family: monospace;
+  resize: vertical;
+  border: 1px solid var(--border-light);
+  border-radius: 0.375rem;
+}
+
+/* JSON Validator */
+.json-validator {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.json-input-area {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+/* XML Validator */
+.xml-validator {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.xml-input-area {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+/* YAML Validator */
+.yaml-validator {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.yaml-input-area {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+/* ----- CONFIGURATION PANEL ----- */
+
+.config-panel {
+  border-left: 1px solid var(--border-light);
+  background-color: var(--bg-light);
+  padding: 1rem;
+  width: 320px;
+  overflow-y: auto;
+}
+
+.config-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.5rem;
+}
+
+.config-header h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.config-content {
+  margin-top: 1rem;
+}
+
+/* ----- DASHBOARD LAYOUT ----- */
+
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+  color: white;
+  width: 250px;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 64px;
+}
+
+.sidebar-header {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--sidebar-hover);
+}
+
+.sidebar nav {
+  padding: 1rem 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.25rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #d1d5db;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.sidebar-item:hover {
+  background-color: var(--sidebar-hover);
+}
+
+.sidebar-item.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.sidebar-item-text {
+  margin-left: 0.75rem;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-light);
+  background-color: white;
+}
+
+.content-area {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.main-panel {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----- RESULTS AREA ----- */
+
+.results-area {
+  border-top: 1px solid var(--border-light);
+  padding: 1rem;
+  flex: 0 0 auto;
+  min-height: 200px;
+  max-height: 40vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.results-content {
+  border: 1px solid var(--border-light);
+  border-radius: 0.375rem;
+  flex: 1;
+  overflow-y: auto;
+  background-color: var(--bg-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.result-message {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+  font-weight: 500;
+}
+
+.result-details {
+  padding: 0.75rem;
+  background-color: var(--bg-light);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+.result-content {
+  flex: 1;
+  overflow-y: auto;
+  background-color: white;
+  padding: 0.75rem;
+  min-height: 100px;
+}
+
+.results-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 2rem;
+  color: var(--text-gray);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* ----- RESIZE HANDLE ----- */
+
+.resize-handle {
+  height: 8px;
+  cursor: ns-resize;
+  background-color: var(--secondary-color);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.resize-handle::after {
+  content: '';
+  position: absolute;
+  width: 32px;
+  height: 4px;
+  background-color: var(--text-gray);
+  border-radius: 2px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Apply dark mode to html and body elements */
+html.dark-mode,
+body.dark-mode {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+/* Make sure the transition applies smoothly */
+html, body, 
+html *, body * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* High-priority dark mode overrides for main containers */
+body.dark-mode #root,
+body.dark-mode .app-container,
+body.dark-mode .dashboard-container {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Clear any white backgrounds from main areas */
+body.dark-mode .dashboard-container > * {
+  background-color: var(--bg-primary);
+}
+
+/* Ensure text contrast in dark mode */
+body.dark-mode {
+  --text-primary: #f3f4f6;
+  --text-secondary: #e5e7eb; 
+  --text-tertiary: #9ca3af;
+}
+
+/* Ensure transitions are smooth */
+.dashboard-container,
+.main-content,
+.content-area,
+.main-header,
+.results-area {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Specifically target main containers that need dark mode */
+body.dark-mode .main-header {
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+}
+
+body.dark-mode .main-content {
+  background-color: var(--bg-secondary);
+}
+
+body.dark-mode .content-area {
+  background-color: var(--bg-secondary);
+}
+
+body.dark-mode .tool-wrapper {
+  background-color: var(--bg-secondary);
+}
+
+/* Target specific components based on screenshots */
+body.dark-mode .config-samples-container,
+body.dark-mode .sql-formatter-container,
+body.dark-mode .mems-container {
+  background-color: var(--bg-secondary);
+}
+
+/* Toolbar fixes */
+body.dark-mode .mems-toolbar,
+body.dark-mode .sql-toolbar {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-color);
+}
+
+/* Fix for tab containers seen in Config Samples */
+body.dark-mode .tab-container {
+  background-color: var(--bg-secondary);
+}
+
+/* ----- DARK MODE STYLES ----- */
+
+@media (prefers-color-scheme: dark) {
+  .main-header {
+    background-color: var(--sidebar-bg);
+    border-color: var(--border-dark);
+  }
+  
+  .main-header h1 {
+    color: var(--text-light);
+  }
+  
+  .config-panel {
+    background-color: var(--sidebar-bg);
+    border-color: var(--border-dark);
+  }
+  
+  .config-header {
+    border-color: var(--border-dark);
+  }
+  
+  .config-header h3 {
+    color: var(--text-light);
+  }
+  
+  .results-area {
+    border-color: var(--border-dark);
+    background-color: var(--sidebar-bg);
+  }
+  
+  .results-header h2 {
+    color: var(--text-light);
+  }
+  
+  .results-content {
+    border-color: var(--border-dark);
+    background-color: var(--bg-dark);
+  }
+  
+  .result-details {
+    background-color: var(--bg-dark);
+    border-color: var(--border-dark);
+  }
+  
+  .result-content {
+    background-color: var(--sidebar-bg);
+  }
+  
+  .resize-handle {
+    background-color: #374151;
+  }
+  
+  .resize-handle::after {
+    background-color: #6b7280;
+  }
+}

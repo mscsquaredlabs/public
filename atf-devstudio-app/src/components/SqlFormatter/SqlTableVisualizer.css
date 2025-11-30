@@ -1,0 +1,232 @@
+/* 
+ * SqlTableVisualizer.css
+ * Styles for SQL Table Structure Visualizer
+ * Supports dark mode to match the theme of the main application
+ */
+
+ .sql-table-visualizer {
+    width: 100%;
+    overflow: auto;
+    border: 1px solid var(--border-color, #e5e7eb);
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--bg-primary, #ffffff);
+    color: var(--text-primary, #1f2937);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .table-header {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+    background-color: var(--bg-secondary, #f9fafb);
+    transition: background-color 0.3s ease;
+  }
+  
+  .table-name {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--accent-color, #4f46e5);
+    transition: color 0.3s ease;
+  }
+  
+  .table-content {
+    padding: 1rem;
+  }
+  
+  .table-structure {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Consolas', 'Monaco', 'Fira Code', monospace;
+    font-size: 0.875rem;
+  }
+  
+  .table-structure th {
+    padding: 0.625rem 1rem;
+    text-align: left;
+    border-bottom: 2px solid var(--border-color, #e5e7eb);
+    font-weight: 600;
+    color: var(--text-primary, #1f2937);
+    background-color: var(--bg-secondary, #f9fafb);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .table-structure td {
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid var(--border-color, #e5e7eb);
+    transition: border-color 0.3s ease;
+  }
+  
+  .column-name {
+    font-weight: 500;
+    color: var(--text-primary, #1f2937);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    background-color: var(--bg-tertiary, #f3f4f6);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .data-type {
+    font-family: 'Consolas', 'Monaco', 'Fira Code', monospace;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    background-color: var(--bg-tertiary, #f3f4f6);
+    color: #0284c7; /* blue */
+    transition: background-color 0.3s ease;
+  }
+  
+  .constraints-cell {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .constraint {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  
+  .constraint.primary-key {
+    background-color: #dcfce7; /* light green */
+    color: #065f46; /* dark green */
+  }
+  
+  .constraint.not-null {
+    background-color: #e0e7ff; /* light indigo */
+    color: #3730a3; /* dark indigo */
+  }
+  
+  .constraint.unique {
+    background-color: #dbeafe; /* light blue */
+    color: #1e40af; /* dark blue */
+  }
+  
+  .constraint.default {
+    background-color: #fef3c7; /* light amber */
+    color: #92400e; /* dark amber */
+  }
+  
+  .constraint.other {
+    background-color: #f3f4f6; /* light gray */
+    color: #4b5563; /* dark gray */
+  }
+  
+  .table-constraints {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color, #e5e7eb);
+  }
+  
+  .table-constraints h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary, #1f2937);
+  }
+  
+  .table-constraints ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  
+  .table-constraints li {
+    padding: 0.5rem 0;
+  }
+  
+  .constraint-type {
+    font-weight: 600;
+    color: var(--accent-color, #4f46e5);
+    margin-right: 0.5rem;
+  }
+  
+  .constraint-columns {
+    font-family: 'Consolas', 'Monaco', 'Fira Code', monospace;
+    color: var(--text-secondary, #4b5563);
+  }
+  
+  .sql-table-error {
+    padding: 1rem;
+    background-color: #fef2f2; /* light red */
+    color: #991b1b; /* dark red */
+    border-left: 4px solid #ef4444; /* medium red */
+    border-radius: 0.375rem;
+  }
+  
+  /* Dark mode styles */
+  .dark-mode .sql-table-visualizer {
+    border-color: var(--border-color, #3a3a3a);
+  }
+  
+  .dark-mode .table-header {
+    background-color: var(--bg-tertiary, #242424);
+    border-color: var(--border-color, #3a3a3a);
+  }
+  
+  .dark-mode .table-structure th {
+    background-color: var(--bg-tertiary, #242424);
+    color: var(--text-primary, #f3f4f6);
+    border-color: var(--border-color, #3a3a3a);
+  }
+  
+  .dark-mode .table-structure td {
+    border-color: var(--border-color, #3a3a3a);
+  }
+  
+  .dark-mode .column-name {
+    background-color: var(--bg-secondary, #1a1a1a);
+    color: var(--text-primary, #f3f4f6);
+  }
+  
+  .dark-mode .data-type {
+    background-color: var(--bg-secondary, #1a1a1a);
+    color: #38bdf8; /* brighter blue for dark mode */
+  }
+  
+  .dark-mode .constraint.primary-key {
+    background-color: #065f46; /* dark green */
+    color: #dcfce7; /* light green */
+  }
+  
+  .dark-mode .constraint.not-null {
+    background-color: #3730a3; /* dark indigo */
+    color: #e0e7ff; /* light indigo */
+  }
+  
+  .dark-mode .constraint.unique {
+    background-color: #1e40af; /* dark blue */
+    color: #dbeafe; /* light blue */
+  }
+  
+  .dark-mode .constraint.default {
+    background-color: #92400e; /* dark amber */
+    color: #fef3c7; /* light amber */
+  }
+  
+  .dark-mode .constraint.other {
+    background-color: #374151; /* dark gray */
+    color: #e5e7eb; /* light gray */
+  }
+  
+  .dark-mode .sql-table-error {
+    background-color: #7f1d1d; /* dark red */
+    color: #fee2e2; /* light red */
+    border-left-color: #ef4444; /* medium red */
+  }
+  
+  .dark-mode .table-constraints {
+    border-color: var(--border-color, #3a3a3a);
+  }
+  
+  .dark-mode .constraint-type {
+    color: var(--accent-light, #6366f1);
+  }
+  
+  .dark-mode .constraint-columns {
+    color: var(--text-tertiary, #9ca3af);
+  }

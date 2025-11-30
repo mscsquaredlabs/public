@@ -1,0 +1,343 @@
+/* 
+ * validators-shared.css
+ * Shared styles for all Validator components (JSON, XML, YAML, SQL Formatter)
+ * Provides consistent color scheme, buttons, animations, and typography
+ */
+
+/* ============================================
+   VALIDATOR COLOR SCHEME (Teal/Cyan Theme)
+   ============================================ */
+:root {
+  /* Validator Primary Colors - Teal/Cyan Theme */
+  --validator-primary: #14b8a6;           /* Teal-500 */
+  --validator-primary-hover: #0d9488;     /* Teal-600 */
+  --validator-primary-active: #0f766e;    /* Teal-700 */
+  --validator-primary-light: #5eead4;     /* Teal-300 */
+  --validator-primary-dark: #134e4a;      /* Teal-900 */
+  
+  /* Validator Accent Colors */
+  --validator-accent: #06b6d4;            /* Cyan-500 */
+  --validator-accent-hover: #0891b2;      /* Cyan-600 */
+  --validator-accent-light: #67e8f9;      /* Cyan-300 */
+  
+  /* Validator Background Colors */
+  --validator-bg-light: #ecfeff;          /* Cyan-50 */
+  --validator-bg-medium: #cffafe;         /* Cyan-100 */
+  
+  /* Validator Text Colors */
+  --validator-text-primary: #0f766e;      /* Teal-700 */
+  --validator-text-secondary: #14b8a6;    /* Teal-500 */
+  --validator-text-light: #5eead4;        /* Teal-300 */
+  
+  /* Validator Border Colors */
+  --validator-border: #5eead4;            /* Teal-300 */
+  --validator-border-dark: #14b8a6;       /* Teal-500 */
+  
+  /* Dark Mode Validator Colors */
+  --validator-primary-dark-mode: #2dd4bf;  /* Teal-400 */
+  --validator-primary-hover-dark: #14b8a6; /* Teal-500 */
+  --validator-bg-dark: #0f172a;           /* Slate-900 */
+  --validator-bg-dark-medium: #1e293b;    /* Slate-800 */
+  --validator-text-dark: #5eead4;         /* Teal-300 */
+  --validator-border-dark-mode: #14b8a6;  /* Teal-500 */
+}
+
+/* ============================================
+   STANDARDIZED BUTTON STYLES
+   ============================================ */
+.validator-btn-primary {
+  padding: 0.625rem 1.125rem;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  background-color: var(--validator-primary, #14b8a6);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(20, 184, 166, 0.2);
+}
+
+.validator-btn-primary:hover:not(:disabled) {
+  background-color: var(--validator-primary-hover, #0d9488);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(20, 184, 166, 0.3);
+}
+
+.validator-btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
+}
+
+.validator-btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.validator-btn-validate {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
+  background-color: var(--validator-primary, #14b8a6);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
+  transition: all 0.2s ease;
+}
+
+.validator-btn-validate:hover:not(:disabled) {
+  background-color: var(--validator-primary-hover, #0d9488);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(20, 184, 166, 0.3);
+}
+
+.validator-btn-validate:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
+}
+
+/* ============================================
+   STANDARDIZED TOOL DESCRIPTION
+   ============================================ */
+.validator-tool-description {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--validator-text-primary, #0f766e);
+  margin: 0 0 1rem 0;
+  padding: 0.875rem 1rem;
+  background-color: var(--validator-bg-light, #ecfeff);
+  border-left: 4px solid var(--validator-primary, #14b8a6);
+  border-radius: 0 0.5rem 0.5rem 0;
+  line-height: 1.5;
+}
+
+/* ============================================
+   STANDARDIZED BUTTON GROUP
+   ============================================ */
+.validator-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 0.875rem;
+  background-color: var(--validator-bg-light, #ecfeff);
+  border: 1px solid var(--validator-border, #5eead4);
+  border-radius: 0.5rem;
+}
+
+/* ============================================
+   STANDARDIZED CODE INPUT
+   ============================================ */
+.validator-code-input {
+  min-height: 300px;
+  max-height: 600px;
+  width: 100%;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 1rem;
+  border: 1px solid var(--validator-border, #5eead4);
+  border-radius: 0.375rem;
+  resize: vertical;
+  overflow: auto;
+  background-color: #ffffff;
+  color: #1f2937;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.validator-code-input:focus {
+  outline: none;
+  border-color: var(--validator-primary, #14b8a6);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.1);
+}
+
+/* ============================================
+   STANDARDIZED TOGGLE SWITCH
+   ============================================ */
+.validator-switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.validator-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.validator-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.validator-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .validator-slider {
+  background-color: var(--validator-primary, #14b8a6);
+}
+
+input:focus + .validator-slider {
+  box-shadow: 0 0 1px var(--validator-primary, #14b8a6);
+}
+
+input:checked + .validator-slider:before {
+  transform: translateX(20px);
+}
+
+/* ============================================
+   STANDARDIZED CONFIG SAMPLE BUTTONS
+   ============================================ */
+.validator-config-sample-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+  background-color: var(--validator-bg-medium, #cffafe);
+  border: 1px solid var(--validator-border, #5eead4);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--validator-text-primary, #0f766e);
+  transition: all 0.2s ease;
+}
+
+.validator-config-sample-btn:hover {
+  background-color: var(--validator-primary-light, #5eead4);
+  border-color: var(--validator-primary, #14b8a6);
+  transform: translateX(4px);
+  box-shadow: 0 2px 4px rgba(20, 184, 166, 0.2);
+}
+
+/* ============================================
+   STANDARDIZED FILE UPLOAD PLACEHOLDER
+   ============================================ */
+.validator-file-upload-placeholder {
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+  border: 2px dashed var(--validator-border, #5eead4);
+  border-radius: 0.375rem;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--validator-bg-light, #ecfeff);
+  transition: all 0.2s ease;
+}
+
+.validator-file-upload-placeholder:hover {
+  border-color: var(--validator-primary, #14b8a6);
+  background-color: var(--validator-bg-medium, #cffafe);
+}
+
+.validator-file-upload-placeholder svg {
+  width: 3rem;
+  height: 2rem;
+  color: var(--validator-primary, #14b8a6);
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   DARK MODE VALIDATOR STYLES
+   ============================================ */
+.dark-mode .validator-tool-description {
+  color: var(--validator-text-dark, #5eead4);
+  background-color: var(--validator-bg-dark-medium, #1e293b);
+  border-left-color: var(--validator-primary-dark-mode, #2dd4bf);
+}
+
+.dark-mode .validator-btn-primary,
+.dark-mode .validator-btn-validate {
+  background-color: var(--validator-primary-dark-mode, #2dd4bf);
+  box-shadow: 0 1px 2px rgba(45, 212, 191, 0.3);
+}
+
+.dark-mode .validator-btn-primary:hover:not(:disabled),
+.dark-mode .validator-btn-validate:hover:not(:disabled) {
+  background-color: var(--validator-primary-hover-dark, #14b8a6);
+  box-shadow: 0 4px 6px rgba(45, 212, 191, 0.4);
+}
+
+.dark-mode .validator-button-group {
+  background-color: var(--validator-bg-dark-medium, #1e293b);
+  border-color: var(--validator-border-dark-mode, #14b8a6);
+}
+
+.dark-mode .validator-code-input {
+  background-color: var(--validator-bg-dark, #0f172a);
+  color: #f3f4f6;
+  border-color: var(--validator-border-dark-mode, #14b8a6);
+}
+
+.dark-mode .validator-code-input:focus {
+  border-color: var(--validator-primary-dark-mode, #2dd4bf);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.2);
+}
+
+.dark-mode .validator-slider {
+  background-color: #4b5563;
+}
+
+.dark-mode .validator-slider:before {
+  background-color: #d1d5db;
+}
+
+.dark-mode input:checked + .validator-slider {
+  background-color: var(--validator-primary-dark-mode, #2dd4bf);
+}
+
+.dark-mode .validator-config-sample-btn {
+  background-color: var(--validator-bg-dark-medium, #1e293b);
+  border-color: var(--validator-border-dark-mode, #14b8a6);
+  color: var(--validator-text-dark, #5eead4);
+}
+
+.dark-mode .validator-config-sample-btn:hover {
+  background-color: #1e293b;
+  border-color: var(--validator-primary-dark-mode, #2dd4bf);
+  background-color: rgba(45, 212, 191, 0.1);
+}
+
+.dark-mode .validator-file-upload-placeholder {
+  background-color: var(--validator-bg-dark-medium, #1e293b);
+  border-color: var(--validator-border-dark-mode, #14b8a6);
+  color: #9ca3af;
+}
+
+.dark-mode .validator-file-upload-placeholder svg {
+  color: var(--validator-primary-dark-mode, #2dd4bf);
+}
+
+
+
+
+

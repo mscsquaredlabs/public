@@ -1,0 +1,210 @@
+.file-browser {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-width: 90vw;
+  max-height: 80vh;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+.file-browser.dark-mode {
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+
+.file-browser-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.file-browser.dark-mode .file-browser-header {
+  border-bottom-color: #4b5563;
+}
+
+.file-browser-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.file-browser-header .close-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-browser-header .close-button:hover {
+  color: #1f2937;
+}
+
+.file-browser.dark-mode .file-browser-header .close-button:hover {
+  color: #f0f0f0;
+}
+
+.file-browser-path {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.file-browser.dark-mode .file-browser-path {
+  border-bottom-color: #4b5563;
+}
+
+.file-browser-path .path-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.875rem;
+}
+
+.file-browser.dark-mode .file-browser-path .path-input {
+  background: #2d2d2d;
+  border-color: #4b5563;
+  color: #f0f0f0;
+}
+
+.file-browser-path button {
+  padding: 8px 16px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.file-browser-path button:hover {
+  background: #4338ca;
+}
+
+.file-browser-error {
+  padding: 12px 16px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 0.875rem;
+}
+
+.file-browser.dark-mode .file-browser-error {
+  background: #7f1d1d;
+  color: #fecaca;
+}
+
+.file-browser-content {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 300px;
+}
+
+.file-browser-loading {
+  padding: 40px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.file-browser-list {
+  padding: 8px;
+}
+
+.file-browser-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.file-browser-item:hover {
+  background: #f3f4f6;
+}
+
+.file-browser.dark-mode .file-browser-item:hover {
+  background: #2d2d2d;
+}
+
+.file-browser-item.selected {
+  background: #dbeafe;
+}
+
+.file-browser.dark-mode .file-browser-item.selected {
+  background: #1e3a5f;
+}
+
+.item-icon {
+  font-size: 1.25rem;
+  width: 24px;
+  text-align: center;
+}
+
+.item-name {
+  flex: 1;
+  font-size: 0.875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item-size {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-family: monospace;
+}
+
+.file-browser.dark-mode .item-size {
+  color: #9ca3af;
+}
+
+.file-browser-footer {
+  padding: 12px 16px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.file-browser.dark-mode .file-browser-footer {
+  border-top-color: #4b5563;
+}
+
+.file-browser-footer .select-button {
+  padding: 8px 24px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.file-browser-footer .select-button:hover:not(:disabled) {
+  background: #059669;
+}
+
+.file-browser-footer .select-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+

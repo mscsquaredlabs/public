@@ -1,0 +1,433 @@
+/* 
+ * dark-mode-enhanced.css
+ * Comprehensive dark mode implementation with proper contrast ratios
+ */
+
+/* Enhanced dark mode variables with WCAG AA compliant contrast */
+:root {
+  /* Light mode variables (baseline) */
+  --bg-primary-light: #ffffff;
+  --bg-secondary-light: #f9fafb;
+  --bg-tertiary-light: #f3f4f6;
+  --text-primary-light: #111827;
+  --text-secondary-light: #4b5563;
+  --text-tertiary-light: #6b7280;
+  --border-light: #e5e7eb;
+}
+
+.dark-mode {
+  /* High contrast dark backgrounds */
+  --bg-primary: #0f172a;        /* Deepest slate */
+  --bg-secondary: #1e293b;      /* Slate 800 */
+  --bg-tertiary: #334155;       /* Slate 700 */
+  --bg-input: #1e293b;          /* Input background */
+  --bg-hover: #475569;          /* Hover state */
+  
+  /* High contrast text colors */
+  --text-primary: #f8fafc;      /* Slate 50 - highest contrast */
+  --text-secondary: #e2e8f0;    /* Slate 200 - secondary text */
+  --text-tertiary: #cbd5e1;     /* Slate 300 - tertiary text */
+  --text-muted: #94a3b8;        /* Slate 400 - muted text */
+  --text-light: #f8fafc;        /* For compatibility */
+  --text-dark: #f8fafc;         /* For compatibility */
+  
+  /* High contrast borders */
+  --border-color: #475569;      /* Slate 600 */
+  --border-light: #475569;      /* Consistent with border-color */
+  --border-dark: #64748b;       /* Slate 500 for emphasis */
+  --border-focus: #7c3aed;      /* Violet for focus states */
+  
+  /* Enhanced accent colors for better visibility */
+  --primary-color: #7c3aed;     /* Violet 600 */
+  --primary-hover: #8b5cf6;     /* Violet 500 */
+  --primary-focus: #a78bfa;     /* Violet 400 */
+  --accent-color: #7c3aed;
+  --accent-hover: #8b5cf6;
+  --accent-light: #c4b5fd;
+  
+  /* Status colors optimized for dark backgrounds */
+  --success-color: #22c55e;     /* Green 500 */
+  --success-bg: rgba(34, 197, 94, 0.1);
+  --error-color: #ef4444;       /* Red 500 */
+  --error-bg: rgba(239, 68, 68, 0.1);
+  --warning-color: #f59e0b;     /* Amber 500 */
+  --warning-bg: rgba(245, 158, 11, 0.1);
+  --info-color: #3b82f6;        /* Blue 500 */
+  --info-bg: rgba(59, 130, 246, 0.1);
+  
+  /* Component-specific backgrounds */
+  --sidebar-bg: #020617;        /* Slate 950 */
+  --sidebar-hover: #1e293b;     /* Slate 800 */
+  --sidebar-active: #7c3aed;    /* Violet 600 */
+  --header-bg: #0f172a;         /* Slate 900 */
+  --panel-bg: #1e293b;          /* Slate 800 */
+  
+  /* Shadow adjustments for dark theme */
+  --shadow-light: rgba(0, 0, 0, 0.3);
+  --shadow-medium: rgba(0, 0, 0, 0.4);
+  --shadow-heavy: rgba(0, 0, 0, 0.6);
+}
+
+/* Global dark mode application */
+.dark-mode,
+.dark-mode * {
+  color-scheme: dark;
+}
+
+/* Main container and layout elements */
+.dark-mode .dashboard-container {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.dark-mode .main-content {
+  background-color: var(--bg-primary);
+}
+
+.dark-mode .main-header {
+  background-color: var(--header-bg);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-mode .main-header h1 {
+  color: var(--text-primary);
+}
+
+/* Sidebar enhancements */
+.dark-mode .sidebar {
+  background-color: var(--sidebar-bg);
+  border-color: var(--border-color);
+}
+
+.dark-mode .sidebar-header {
+  border-color: var(--border-color);
+}
+
+.dark-mode .sidebar-title {
+  color: var(--text-primary);
+}
+
+.dark-mode .sidebar-toggle {
+  color: var(--text-secondary);
+}
+
+.dark-mode .sidebar-toggle:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-hover);
+}
+
+.dark-mode .sidebar-item {
+  color: var(--text-secondary);
+}
+
+.dark-mode .sidebar-item:hover {
+  background-color: var(--sidebar-hover);
+  color: var(--text-primary);
+}
+
+.dark-mode .sidebar-item.active {
+  background-color: var(--sidebar-active);
+  color: var(--text-primary);
+}
+
+.dark-mode .category-header {
+  color: var(--text-tertiary);
+}
+
+.dark-mode .version-badge {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+/* Form elements with proper contrast */
+.dark-mode input[type="text"],
+.dark-mode input[type="number"],
+.dark-mode input[type="password"],
+.dark-mode input[type="email"],
+.dark-mode input[type="url"],
+.dark-mode input[type="search"],
+.dark-mode select,
+.dark-mode textarea {
+  background-color: var(--bg-input);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.dark-mode input:focus,
+.dark-mode select:focus,
+.dark-mode textarea:focus {
+  border-color: var(--border-focus);
+  outline: 2px solid var(--primary-color);
+  outline-offset: -2px;
+  background-color: var(--bg-secondary);
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Button styling with proper contrast */
+.dark-mode .btn-main,
+.dark-mode .btn-primary {
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+  border: 1px solid var(--primary-color);
+}
+
+.dark-mode .btn-main:hover,
+.dark-mode .btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.dark-mode .btn-main:disabled,
+.dark-mode .btn-primary:disabled {
+  background-color: var(--bg-tertiary);
+  color: var(--text-muted);
+  border-color: var(--border-color);
+}
+
+.dark-mode .btn-feature {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.dark-mode .btn-feature:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-dark);
+}
+
+.dark-mode .btn-convert {
+  background-color: var(--info-color);
+  color: var(--text-primary);
+  border-color: var(--info-color);
+}
+
+.dark-mode .btn-convert:hover {
+  background-color: #2563eb; /* Blue 600 */
+  border-color: #2563eb;
+}
+
+.dark-mode .btn-settings {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.dark-mode .btn-settings:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.dark-mode .btn-mode {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.dark-mode .btn-mode.active {
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+  border-color: var(--primary-color);
+}
+
+.dark-mode .btn-mode:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* Header action buttons */
+.dark-mode .config-button {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.dark-mode .config-button:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.dark-mode .config-button.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.dark-mode .theme-toggle-button {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.dark-mode .theme-toggle-button:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* Configuration panel */
+.dark-mode .config-panel {
+  background-color: var(--panel-bg);
+  border-color: var(--border-color);
+}
+
+.dark-mode .config-header {
+  border-color: var(--border-color);
+}
+
+.dark-mode .config-header h3 {
+  color: var(--text-primary);
+}
+
+.dark-mode .close-config-button {
+  color: var(--text-secondary);
+}
+
+.dark-mode .close-config-button:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.dark-mode .config-section-title {
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.dark-mode .config-form-group label {
+  color: var(--text-secondary);
+}
+
+.dark-mode .config-sample-btn {
+  background-color: var(--bg-tertiary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.dark-mode .config-sample-btn:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.dark-mode .config-helper-text {
+  color: var(--text-muted);
+}
+
+/* Code and formatted content */
+.dark-mode .code-input,
+.dark-mode pre,
+.dark-mode code,
+.dark-mode .formatted-output {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Tool-specific elements */
+.dark-mode .tool-container {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.dark-mode .tool-description {
+  color: var(--text-secondary);
+}
+
+.dark-mode .form-group label {
+  color: var(--text-secondary);
+}
+
+/* Generic button styling for unlabeled buttons */
+.dark-mode button:not([class*="btn-"]):not(.config-button):not(.theme-toggle-button):not(.close-config-button):not(.sidebar-toggle) {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.dark-mode button:not([class*="btn-"]):hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-dark);
+}
+
+/* Focus indicators for accessibility */
+.dark-mode *:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Selection styling */
+.dark-mode ::selection {
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+}
+
+/* Scrollbar styling for dark mode */
+.dark-mode ::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+  background-color: var(--bg-secondary);
+  border-radius: 6px;
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 6px;
+  border: 2px solid var(--bg-secondary);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--border-dark);
+}
+
+.dark-mode ::-webkit-scrollbar-corner {
+  background-color: var(--bg-secondary);
+}
+
+/* Ensure text visibility in all contexts */
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
+  color: var(--text-primary);
+}
+
+.dark-mode p, .dark-mode span, .dark-mode div {
+  color: inherit;
+}
+
+/* Media query fallback for systems that prefer dark mode */
+@media (prefers-color-scheme: dark) {
+  .dashboard-container:not(.dark-mode) {
+    /* Only apply if dark mode class is not explicitly set */
+  }
+}
+
+/* Transition animations */
+.dashboard-container,
+.main-content,
+.main-header,
+.sidebar,
+.config-panel,
+button,
+input,
+select,
+textarea {
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .dark-mode {
+    --bg-primary: #000000;
+    --text-primary: #ffffff;
+    --border-color: #666666;
+  }
+}

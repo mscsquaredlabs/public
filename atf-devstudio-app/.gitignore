@@ -1,0 +1,67 @@
+# Node / React dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build outputs
+build/
+dist/
+.cache/
+.next/
+out/
+.tmp/
+temp/
+
+# Testing
+coverage/
+*.lcov
+jest-html-reporters-*.html
+.junit/
+
+# Logs
+logs/
+*.log
+*.log.*
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Editor / IDE
+.vscode/
+.idea/
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Storybook / tools
+storybook-static/
+.out/
+
+# Misc tool artifacts
+.eslintcache
+.stylelintcache
+*.tsbuildinfo
+
+# Local data / scratch
+*.local.*
+*.swp
+*.swo
+
+# Local Folder
+notes/

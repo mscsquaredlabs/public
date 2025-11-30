@@ -1,0 +1,78 @@
+/*
+ * core-layout.css
+ * Contains core layout styles for the dashboard structure
+ * Includes container, main content, and general layout elements
+ */
+
+/* Main container wrapper */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar position: right */
+.dashboard-container.sidebar-right {
+  flex-direction: row-reverse;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-color: var(--bg-secondary, #f9fafb);
+}
+
+/* Content area that holds the main panel and config panel */
+.content-area {
+  display: flex;
+  flex: 1;
+  position: relative;
+}
+
+/* Ensure config panel appears in correct order */
+.content-area .config-panel {
+  flex-shrink: 0;
+}
+
+/* Main panel - contains the tool container and results area */
+.main-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Let children handle scrolling */
+}
+
+/* Tool wrapper - contains the tool and results */
+.tool-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+/* Input containers - ensure they don't take too much space */
+.xml-input-container,
+.json-input-container,
+.yaml-input-container {
+  flex: 0 0 auto;
+  min-height: 200px;
+  max-height: 40vh; /* Limit to 40% of viewport height */
+}
+
+/* Textarea inside input containers */
+.xml-input-container textarea,
+.json-input-container textarea,
+.yaml-input-container textarea {
+  height: 100%;
+  min-height: 180px;
+  max-height: 38vh;
+}
+
+/* Dark mode adjustments */
+.dark-mode .main-content {
+  background-color: var(--bg-primary, #111827);
+}

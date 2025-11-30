@@ -1,0 +1,72 @@
+<!-- diagnostics.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Terminal Command Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        pre { background: #f1f1f1; padding: 10px; border-radius: 4px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Terminal Command Test</h1>
+    
+    <div>
+        <input id="cmd" type="text" value="dir" placeholder="Command" style="width: 300px;">
+        <input id="cwd" type="text" value="C:\" placeholder="Working Directory" style="width: 300px;">
+        <button id="testBtn">Execute Command</button>
+    </div>
+    
+    <h3>Result:</h3>
+    <pre id="result">Results will appear here...</pre>
+    
+    <h3>Network Log:</h3>
+    <div id="networkLog"></div>
+    
+    <script>
+        document.getElementById('testBtn').addEventListener('click', async () => {
+            const cmd = document.getElementById('cmd').value;
+            const cwd = document.getElementById('cwd').value;
+            const result = document.getElementById('result');
+            const networkLog = document.getElementById('networkLog');
+            
+            result.textContent = 'Executing command...';
+            
+            // Add log entry
+            const logEntry = document.createElement('div');
+            logEntry.innerHTML = `<b>${new Date().toLocaleTimeString()}</b>: Sending command "${cmd}" to server...`;
+            networkLog.prepend(logEntry);
+            
+            try {
+                // Make the request
+                const startTime = performance.now();
+                const response = await fetch('/api/terminal/exec', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command: cmd, cwd: cwd })
+                });
+                const endTime = performance.now();
+                
+                // Log the response status
+                logEntry.innerHTML += ` <span class="${response.ok ? 'success' : 'error'}">Response: ${response.status} ${response.statusText} (${Math.round(endTime - startTime)}ms)</span>`;
+                
+                if (!response.ok) {
+                    throw new Error(`Server responded with status: ${response.status}`);
+                }
+                
+                // Parse and display the result
+                const data = await response.json();
+                result.textContent = JSON.stringify(data, null, 2);
+                
+                // Update log with details
+                logEntry.innerHTML += `<br>Output size: ${data.output ? data.output.length : 0} characters`;
+            } catch (error) {
+                result.textContent = `Error: ${error.message}`;
+                logEntry.innerHTML += ` <span class="error">Error: ${error.message}</span>`;
+            }
+        });
+    </script>
+</body>
+</html>

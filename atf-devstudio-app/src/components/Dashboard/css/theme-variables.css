@@ -1,0 +1,54 @@
+/*
+ * theme-variables.css
+ * Central location for all theme variables used across the application
+ */
+
+ :root {
+    /* Background colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-tertiary: #f3f4f6;
+    
+    /* Text colors */
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-tertiary: #6b7280;
+    
+    /* Border colors */
+    --border-color: #e5e7eb;
+    --border-light: #e5e7eb;
+    --border-dark: #4b5563;
+    
+    /* Accent colors */
+    --accent-color: #4f46e5;
+    --accent-hover: #4338ca;
+    --accent-light: #c7d2fe;
+    
+    /* Status colors */
+    --success-color: #10b981;
+    --error-color: #ef4444;
+    --warning-color: #f59e0b;
+    --info-color: #3b82f6;
+    
+    /* Shadow effects */
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Animation durations */
+    --transition-speed: 0.3s;
+    
+    /* Other variables */
+    --sidebar-width: 240px;
+    --sidebar-collapsed-width: 60px;
+    --config-panel-width: 320px;
+    --header-height: 64px;
+    
+    /* Additional variables needed for various components */
+    --primary-color: var(--accent-color);
+    --primary-hover: var(--accent-hover);
+    --bg-light: var(--bg-secondary);
+    --bg-dark: #1f2937;
+    --text-dark: var(--text-primary);
+    --text-light: #f3f4f6;
+    --sidebar-bg: #1f2937;
+  }

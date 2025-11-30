@@ -1,0 +1,59 @@
+{
+  "short_name": "Dev Cheat Sheet",
+  "name": "Developer Cheat Sheet",
+  "description": "A comprehensive cheat sheet for software developers with quick access to code snippets, shortcuts, and best practices",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4f46e5",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["developer tools", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "screenshot1.png",
+      "type": "image/png",
+      "sizes": "1280x720"
+    },
+    {
+      "src": "screenshot2.png",
+      "type": "image/png",
+      "sizes": "1280x720"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "IDE Shortcuts",
+      "short_name": "Shortcuts",
+      "description": "View editor shortcuts",
+      "url": "/?category=ide-shortcuts",
+      "icons": [{ "src": "shortcut-icon.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "JavaScript",
+      "short_name": "JS",
+      "description": "View JavaScript cheat sheets",
+      "url": "/?category=javascript",
+      "icons": [{ "src": "js-icon.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

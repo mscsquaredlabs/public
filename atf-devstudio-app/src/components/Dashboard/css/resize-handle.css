@@ -1,0 +1,45 @@
+/*
+ * resize-handle.css
+ * Styles for the resize handle between tool container and results area
+ * Includes handle appearance and interaction styling
+ */
+
+/* Resize handle between tool and results */
+.resize-handle {
+    flex: 0 0 8px;
+    cursor: ns-resize;
+    position: relative;
+    background-color: #f3f4f6;
+    margin: 0;
+    z-index: 2;
+  }
+  
+  /* Center indicator line */
+  .resize-handle::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 32px;
+    background-color: #9ca3af;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Dark mode styles */
+  @media (prefers-color-scheme: dark) {
+    .resize-handle {
+      background-color: #374151;
+    }
+    
+    .resize-handle:hover,
+    .resize-handle:active {
+      background-color: #4b5563;
+    }
+    
+    .resize-handle::after {
+      background-color: #6b7280;
+    }
+  }

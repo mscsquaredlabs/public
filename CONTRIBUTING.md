@@ -4,7 +4,7 @@ We welcome and encourage contributions from the community! By participating in t
 
 ## 📚 Code of Conduct
 
-Please review our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) to help us maintain a welcoming and inclusive environment for all participants.
+Please review our CODE_OF_CONDUCT.md to help us maintain a welcoming and inclusive environment for all participants.
 
 ---
 
@@ -14,10 +14,10 @@ If you find a bug in the code, please help us by submitting a detailed report.
 
 1.  **Check Existing Issues:** Before submitting a new issue, check the **[Issue Tracker]** (Replace with: `https://github.com/mscsquaredlabs/your-repo-name/issues`) to see if the bug has already been reported.
 2.  **Open a New Issue:** If it's a new bug, open an issue and include:
-    * A clear and descriptive **title**.
-    * The **steps to reproduce** the bug.
-    * The **expected behavior** vs. the **actual behavior**.
-    * Relevant **environment details** (e.g., OS, runtime version, browser).
+    - A clear and descriptive **title**.
+    - The **steps to reproduce** the bug.
+    - The **expected behavior** vs. the **actual behavior**.
+    - Relevant **environment details** (e.g., OS, runtime version, browser).
 
 ---
 
@@ -37,8 +37,8 @@ We follow the **standard GitHub flow** for code contributions.
 
 ### 1. Prerequisites
 
-* Read and agree to the terms of the **[LICENSE](LICENSE)**.
-* Make sure your contribution aligns with the project’s goals. For major features or changes, consider discussing them in an issue first.
+- Read and agree to the terms of the **LICENSE.txt**.
+- Make sure your contribution aligns with the project’s goals. For major features or changes, consider discussing them in an issue first.
 
 ### 2. Setup
 
@@ -55,14 +55,14 @@ We follow the **standard GitHub flow** for code contributions.
 
 ### 3. Commit Guidelines
 
-* Ensure your code follows existing style and formatting conventions.
-* Write clear, concise commit messages. A good pattern is:
-    ```text
-    <Type>: <Short summary under 50 characters>
-    ```
-    **Examples:**
-    * `Fix: Resolve memory leak in data parser`
-    * `Feat: Add basic health check endpoint`
+- Ensure your code follows existing style and formatting conventions.
+- Write clear, concise commit messages. A good pattern is:
+  ```text
+  <Type>: <Short summary under 50 characters>
+  ```
+  **Examples:**
+  - `Fix: Resolve memory leak in data parser`
+  - `Feat: Add basic health check endpoint`
 
 ### 4. Submitting a Pull Request (PR)
 

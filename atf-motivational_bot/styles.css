@@ -1,0 +1,51 @@
+/* Base reset */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: #f8f8f5; /* very soft off-white */
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+#quote-container {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  border-radius: 12px;
+  padding: 40px 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+#quote-text {
+  font-size: clamp(24px, 5vw, 40px);
+  line-height: 1.25;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.author {
+  margin: 0 0 24px;
+  color: #6b7280;
+}
+
+#new-vibe-btn {
+  appearance: none;
+  border: none;
+  background: #111111; /* simple, dark */
+  color: #ffffff; /* white text */
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 0; /* square corners */
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#new-vibe-btn:hover { background: #000000; }
+
